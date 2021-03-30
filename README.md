@@ -11,7 +11,7 @@ This repository contains software and documents created for the Shared Authority
 ## Contributors
 
 - [Andra Waagmeester](https://github.com/andrawaag)
-- [Jose Emilio Labra Gayo](http://labra.weso.es)]
+- [Jose Emilio Labra Gayo](http://labra.weso.es)
 
 
 
