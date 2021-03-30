@@ -1,0 +1,45 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix wdt: <http://afl-example.wiki.opencura.com/prop/direct/>
+prefix wd: <http://afl-example.wiki.opencura.com/entity/>
+prefix p: <http://afl-example.wiki.opencura.com/prop/>
+prefix ps: <http://afl-example.wiki.opencura.com/prop/statement/>
+prefix pr: <http://afl-example.wiki.opencura.com/prop/reference/>
+prefix crm: <http://erlangen-crm.org/current/>
+prefix efr:  <http://erlangen-crm.org/efrbroo/>
+prefix afl:  <http://example.org/afl/>
+
+construct {
+  wd:Q40 rdf:type crm:E21_Person ;
+         crm:P1_identified_by [ 
+             rdf:type crm:E82_Actor_appelation ;
+             efr:R8_consists_of [ 
+                 rdf:type crm:E90_Symbolic_object ;
+                 afl:value ?name ;
+                 crm:P2_has_type [ 
+                     rdf:type crm:P55_type ;
+                     afl:value "0" 
+                ]           
+            ] 
+         ] ;
+         crm:P98_was_born [ 
+             rdf:type crm:E67_Birth ;
+             crm:P4_has_time_span [ 
+                 rdf:type crm:E52_Time-span ;
+                 afl:value ?birthDate
+             ]
+         ] ;
+         crm:P98_was_born [ 
+             rdf:type crm:E67_Birth ;
+             crm:P7_took_place_at [ 
+                 rdf:type crm:E53_Place ;
+                 afl:value ?birthPlace
+             ]
+         ]
+} where {
+  wd:Q40 p:P20 [ 
+    ps:P20 ?name ;
+    prov:wasDerivedFrom [ pr:P23 ?type_of_name ] 
+   ] ;
+   wdt:P19 ?birthDate ;
+   wdt:P26 ?birthPlace .      
+}

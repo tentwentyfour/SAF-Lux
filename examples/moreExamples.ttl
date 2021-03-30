@@ -1,0 +1,731 @@
+prefix crm:  <http://erlangen-crm.org/current/>
+prefix efr:  <http://erlangen-crm.org/efrbroo/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix :     <http://example.org/>
+prefix afl:  <http://example.org/afl/>
+
+:e1            rdf:type                        crm:E21_Person ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "name"@en ;
+   crm:P2_has_type afl:direct ;
+   afl:value "Charlotte" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [ 
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "title"@en ;
+   crm:P2_has_type afl:free_text ;
+   afl:value "Grande-Duchesse de Luxembourg" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title"@en ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Duchesse de Nassau" 
+   ] 
+  ] 
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title"@en ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Großherzogin von Luxemburg" 
+   ]
+  ]
+ ] ; 
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title"@en ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Herzogin von Nassau" 
+   ]
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name"@en ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Nassau, Charlotte Adelgonde Élisabeth Marie Wilhelmine de" 
+   ]
+  ]
+ ] ;
+ crm:P98_was_born [
+  rdf:type             crm:E67_Birth ;  
+  crm:P7_took_place_at :Luxembourg ;
+ ] ;
+ crm:P98_was_born [
+   rdf:type crm:E67_Birth ;
+   crm:P4_has_time_span [
+    rdf:type   crm:E52_Time-Span ;
+    rdfs:label "date of birth" ;
+    afl:value  "1896-01-23" 
+  ] 
+ ] ;
+ crm:P100_died_in [
+  rdf:type             crm:E69_Death ;
+  crm:P7_took_place_at :Luxembourg ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   rdfs:label "date of death" ;
+   afl:value  "1985-07-09" 
+  ]
+ ] ;
+ crm:P2_has_type                 :female ;
+ crm:P14i_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "activity"@en     ;
+  ] ;
+  afl:value  "Grande-Duchesse de Luxembourg" ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1919"       ;
+   rdfs:label "date of beginning"@en
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1964"       ;
+   rdfs:label "end date"@en
+  ]
+ ] ;
+ crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   crm:P2_has_type [
+     rdf:type crm:E55_Type ;
+     rdfs:label "type of source"@en ;
+     afl:value "to do"
+   ] ;
+   afl:value "lb.wikipedia.org, consulté le 21.02.2020" 
+ ] ;
+crm:P70i_is_documented_in [
+  rdf:type  crm:E31_Document ; 
+  afl:value <https://lb.wikipedia.org/wiki/Charlotte_vu_L%C3%ABtzebuerg> 
+ ] ;
+ crm:P48_has_prefered_identifier [
+  rdf:type                        crm:E42_Identifier    ;
+  rdfs:label                      "ID"          ;
+  crm:P2_has_type                 :isni                 ;
+  afl:value                       "0000 0003 8244 0415" 
+ ] ;
+crm:P48_has_prefered_identifier [
+ rdf:type                        crm:E42_Identifier    ;
+ rdfs:label                      "ID"                  ;
+ crm:P2_has_type                 :viaf                 ;
+ afl:value                       "264499494"           
+] ;
+crm:P67i_is_refered_to_by [
+  rdf:type crm:E89_Propositional_object ;
+  crm:P48_has_prefered_identifier [
+    rdf:type crm:E42_Identifier ;
+    afl:value "Example 1"
+  ]
+]
+.
+
+:e2 rdf:type crm:E21_Person ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "name" ;
+   crm:P2_has_type afl:indirect ;
+   afl:value "Cloos, Boy" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Cloos, Félix" 
+   ]
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Jr." 
+   ] 
+  ] 
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [ 
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "title" ;
+   crm:P2_has_type afl:free_text ;
+   afl:value "Grande-Duchesse de Luxembourg" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Duchesse de Nassau" 
+   ] 
+  ] 
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Großherzogin von Luxemburg" 
+   ]
+  ]
+ ] ; 
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Herzogin von Nassau" 
+   ]
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Nassau, Charlotte Adelgonde Élisabeth Marie Wilhelmine de" 
+   ]
+  ]
+ ] ;
+ crm:P98_was_born [
+  rdf:type             crm:E67_Birth ;  
+  crm:P7_took_place_at :Luxembourg ;
+  crm:P4_has_time_span [
+    rdf:type   crm:E52_Time-Span ;
+    rdfs:label "date of birth" ;
+    afl:value  "1928-10-30" 
+  ] 
+ ] ;
+ crm:P2_has_type                 :male ; 
+ crm:P14i_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "profession"     ;
+   afl:value  "Entrepreneur" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1919"       ;
+   rdfs:label "date of beginning"@en
+  ];
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1964"       ;
+   rdfs:label "end date"@en
+  ]
+ ] ;
+# crm:P14i_performed [
+#  rdf:type    crm:E7_Activity        ;
+#  crm:P2_has_type  [
+#   rdf:type   crm:E55_Type           ;
+#   rdfs:label "Type of activity"     ;
+#   afl:value  "Directeur de l'entreprise Cloos s.a." 
+#  ] ;
+#  crm:P4_has_time_span [
+#   rdf:type   crm:E52_Time-Span ;
+#  afl:value  "1951-1994"       
+#  ]
+# ] ;
+# crm:P14i_performed [
+#  rdf:type    crm:E7_Activity        ;
+#  crm:P2_has_type  [
+#   rdf:type   crm:E55_Type           ;
+#   rdfs:label "Type of activity"     ;
+#   afl:value  "Artiste-peintre autodidacte" 
+#  ] ;
+#  crm:P4_has_time_span [
+#   rdf:type   crm:E52_Time-Span ;
+#   afl:value  "1994-" 
+#  ]
+# ] ;
+ crm:P70i_is_documented_in [     # P73 (wikibase)
+   rdf:type  crm:E31_Document ; 
+   afl:value "lb.wikipedia.org, consulté le 26.01.2020" 
+ ] ; 
+ crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "Ausstellung Félix Boy Cloos, consulté le 26.01.2020" 
+ ] ; 
+ crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "http://www.dittmar-lauer.de/cloosausstellung.htm" 
+ ] ; 
+ crm:P48_has_prefered_identifier [
+  rdf:type                        crm:E42_Identifier    ;
+  rdfs:label                      "identifier"          ;
+  crm:P2_has_type                 :isni                 ;
+  afl:value                       "0000 0004 8298 7004" 
+ ] 
+.
+
+:e3 rdf:type crm:E21_Person ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "name" ;
+   crm:P2_has_type afl:indirect ;
+   afl:value "Aa, Petrus van der" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Vanderanus, Petrus" 
+   ]
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Aa, Pierre van der" 
+   ]
+  ]
+ ] ; 
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Van der Aa, Petrus" 
+   ]
+  ]
+ ] ; 
+ crm:P98_was_born [
+  rdf:type             crm:E67_Birth ;  
+  crm:P7_took_place_at :Belgique ;
+  crm:P4_has_time_span [
+    rdf:type   crm:E52_Time-Span ;
+    rdfs:label "date of birth" ;
+    afl:value  "1550?" 
+  ] 
+ ] ;
+ crm:P100_died_in [
+  rdf:type             crm:E69_Death ;
+  crm:P7_took_place_at :Luxembourg ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   rdfs:label "date of death" ;
+   afl:value  "1591-08-31" 
+  ]
+ ] ;
+ crm:P2_has_type                 :male ; 
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type ;
+   rdfs:label "profession"     ;
+   afl:value  "Juriste" 
+  ] 
+ ] ;
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type ;
+   rdfs:label "profession" ;
+   afl:value  "Professeur d'université" 
+  ] 
+ ] ;
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Président du Conseil provincial des Pays et Duché de Luxembourg et Comté de Chiny" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1574-1591"       
+  ]
+ ] ;
+ crm:crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "Lascombes, François, Chronik der Stadt Luxemburg (1444-1684), 1976, p. 405" 
+ ] ; 
+ crm:crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "http://www.a-z.lu/BIBNET:ALEPH_LUX01000029125" 
+ ] ; 
+ crm:P48_has_prefered_identifier [
+  rdf:type                        crm:E42_Identifier    ;
+  rdfs:label                      "identifier"          ;
+  crm:P2_has_type                 :isni                 ;
+  afl:value                       "0000 0000 8204 4322" 
+ ] ;
+crm:P48_has_prefered_identifier [
+ rdf:type                        crm:E42_Identifier    ;
+ rdfs:label                      "identifier"          ;
+ crm:P2_has_type                 :viaf                 ;
+ afl:value                       "18863051"           
+] 
+.
+
+:e4 rdf:type crm:E21_Person ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "name" ;
+   crm:P2_has_type afl:direct ;
+   afl:value "Willibrordus" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Clemens Willibrordus" 
+   ]
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Ultraiectensis" 
+   ]
+  ]
+ ] ; 
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Traiectensis" 
+   ]
+  ]
+ ] ; 
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative title" ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Sanctus" 
+   ]
+  ]
+ ] ;  
+ crm:P98_was_born [
+  rdf:type             crm:E67_Birth ;  
+  crm:P7_took_place_at :GrandeBretagne ;
+  crm:P4_has_time_span [
+    rdf:type   crm:E52_Time-Span ;
+    rdfs:label "date of birth" ;
+    afl:value  "0658?" 
+  ] 
+ ] ;
+ crm:P100_died_in [
+  rdf:type             crm:E69_Death ;
+  crm:P7_took_place_at :Luxembourg ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   rdfs:label "date of death" ;
+   afl:value  "0738?" 
+  ]
+ ] ;
+ crm:P2_has_type                 :male ; 
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Missionnaire anglo-saxon" 
+  ] ;
+ ] ;
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Fondateur du monastère d'Echternach au Luxembourg" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "698-" 
+  ]
+ ] ;
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Premier évêque d'Utrecht" 
+  ] ;
+ ] ;
+ crm:crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "Deutsche Biographie en ligne, consulté le 31.07.2019" 
+ ] ; 
+ crm:crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "https://www.deutsche-biographie.de/sfz85687.html#adbcontent" 
+ ] ; 
+ crm:P48_has_prefered_identifier [
+  rdf:type                        crm:E42_Identifier    ;
+  rdfs:label                      "identifier"          ;
+  crm:P2_has_type                 :isni                 ;
+  afl:value                       "0000 0003 8236 247X" 
+ ] ;
+crm:P48_has_prefered_identifier [
+ rdf:type                        crm:E42_Identifier    ;
+ rdfs:label                      "identifier"          ;
+ crm:P2_has_type                 :viaf                 ;
+ afl:value                       "265587657"           
+] 
+.
+
+:e5 rdf:type crm:E21_Person ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  efr:R8_consists_of [
+   rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "name" ;
+   crm:P2_has_type afl:indirect ;
+   afl:value "Barthel, Josy" 
+  ]
+ ] ;
+ crm:P1_is_identified_by [
+  rdf:type crm:E82_Actor_appellation ;
+  crm:P139_has_alternative_form [
+   rdf:type           crm:E82_Actor_appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "alternative name" ;
+    crm:P2_has_type afl:indirect ;
+    afl:value "Barthel, Joseph" 
+   ]
+  ]
+ ] ;
+ crm:P98_was_born [
+  rdf:type             crm:E67_Birth ;  
+  crm:P7_took_place_at :Luxembourg ;
+  crm:P4_has_time_span [
+    rdf:type   crm:E52_Time-Span ;
+    rdfs:label "date of birth" ;
+    afl:value  "1927-04-24" 
+  ] 
+ ] ;
+ crm:P100_died_in [
+  rdf:type             crm:E69_Death ;
+  crm:P7_took_place_at :Luxembourg ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   rdfs:label "date of death" ;
+   afl:value  "1992-07-07" 
+  ]
+ ] ;
+  crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "profession"     ;
+   afl:value  "Sportif" 
+  ] ;
+ ] ;
+  crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "profession"     ;
+   afl:value  "Homme politique" 
+  ] ;
+ ] ; 
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Chimiste au Laboratoire de l'État" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1951-" 
+  ]
+ ] ;
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Vainqueur de la course des 1.500 m hommes aux Jeux olympiques d'été à Helsinki" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1952" 
+  ]
+ ] ;
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Président de la Fédération luxembourgeoise d’athlétisme (FLA)" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1962" 
+  ]
+ ] ; 
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Président du Comité olympique luxembourgeois (COL)" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1972-1977" 
+  ]
+ ] ;  
+ crm:P14_performed [
+  rdf:type    crm:E7_Activity        ;
+  crm:P2_has_type  [
+   rdf:type   crm:E55_Type           ;
+   rdfs:label "Type of activity"     ;
+   afl:value  "Ministre des ressorts Transports, Énergie, Environnement, Tourisme, Communication" 
+  ] ;
+  crm:P4_has_time_span [
+   rdf:type   crm:E52_Time-Span ;
+   afl:value  "1977-1984" 
+  ]
+ ] ;   
+ crm:crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "lb.wikipedia.lu, consulté le 29.01.2018" 
+ ] ; 
+ crm:crm:P70i_is_documented_in [
+   rdf:type  crm:E31_Document ; 
+   afl:value "https://lb.wikipedia.org/wiki/Josy_Barthel" 
+ ] ; 
+crm:P48_has_prefered_identifier [
+ rdf:type                        crm:E42_Identifier    ;
+ rdfs:label                      "identifier"          ;
+ crm:P2_has_type                 :viaf                 ;
+ afl:value                       "315524088"           
+] 
+.
+
+
+:isni             rdf:type                        crm:E55_Type          ;
+               #   crm:P71_is_listed_in            :afl_authorities      ;
+                  rdfs:label                      "ID Source"@en        ;
+                  afl:value                       "ISNI"       .
+:viaf             rdf:type                        crm:E55_Type          ;
+               #   crm:P71_is_listed_in            :afl_authorities      ;
+                  rdfs:label                      "ID Source"@en        ;
+                  afl:value                       "VIAF"       .
+
+#:afl_authorities  rdf:type                        crm:E32_Authority_document ;
+#                  rdfs:label                     "authority_file" .
+
+:male            rdf:type                         crm:E55_Type ;
+                 rdfs:label                       "gender"     ;
+                 afl:value                        1            .
+:female          rdf:type                         crm:E55_Type ;
+                 rdfs:label                       "gender"     ;
+                 afl:value                        2            .
+
+
+:Luxembourg rdf:type crm:E53_Place ;
+            rdfs:label "place of birth" ;
+            afl:value "Luxembourg"  .
+
+:Belgique rdf:type crm:E53_Place ;
+          rdfs:label "place of birth" ;
+          afl:value "Belgique"  .
+
+:GrandeBretagne rdf:type crm:E53_Place ;
+          rdfs:label "place of birth" ;
+          afl:value "Grande Bretagne"  .
+
+afl:direct   rdf:type   crm:E55_Type ;
+             rdfs:label "Direct order"@en ;
+             rdfs:label "Direkte Folge"@de ;
+             rdfs:label "ordre direct"@fr  ;
+             afl:value "0" .  
+afl:indirect rdf:type   crm:E55_Type ;
+             rdfs:label "Indirect order"@en  ;
+             rdfs:label "Indirekte Folge"@de ;
+             rdfs:label "ordre indirect"@fr ;
+             afl:value "1" .             
+
+# Some values in the rules are "Only roman numbers till XXX"
+afl:controlled_list rdf:type   crm:E55_Type .  

@@ -1,0 +1,1 @@
+curl -H "Accept:text/turtle" --data-urlencode "query@query1.sparql" https://aflex.wiki.opencura.com/query/sparql

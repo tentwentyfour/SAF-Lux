@@ -4,7 +4,9 @@ This repository contains software and documents created for the Shared Authority
 
 ## Contents
 
-- rules2shex: Contains the converter from Excel sheets that represent domain model rules to Shape Expressions
+- shex: contains the ShEx schemas manually converted from the excel sheets
+- examples: contains some example data
+- af2shex: Contains the converter from Excel sheets that represent domain model rules to Shape Expressions
 
 ## Contributors
 
