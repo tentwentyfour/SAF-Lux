@@ -5,6 +5,10 @@ prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix :     <http://example.org/>
 prefix afl:  <http://example.org/afl/>
 
+# These examples come from the Excel sheet
+# https://docs.google.com/spreadsheets/d/1h6QZlsnqo54ltAoOlnF6AFi2gGxksKZU/
+# Tab Examples.
+
 :e1            rdf:type                        crm:E21_Person ;
  crm:P1_is_identified_by [
   rdf:type crm:E82_Actor_appellation ;
@@ -402,11 +406,11 @@ crm:P67i_is_refered_to_by [
    afl:value  "1574-1591"       
   ]
  ] ;
- crm:crm:P70i_is_documented_in [
+ crm:P70i_is_documented_in [
    rdf:type  crm:E31_Document ; 
    afl:value "Lascombes, François, Chronik der Stadt Luxemburg (1444-1684), 1976, p. 405" 
  ] ; 
- crm:crm:P70i_is_documented_in [
+ crm:P70i_is_documented_in [
    rdf:type  crm:E31_Document ; 
    afl:value "http://www.a-z.lu/BIBNET:ALEPH_LUX01000029125" 
  ] ; 
@@ -529,11 +533,11 @@ crm:P48_has_prefered_identifier [
    afl:value  "Premier évêque d'Utrecht" 
   ] ;
  ] ;
- crm:crm:P70i_is_documented_in [
+ crm:P70i_is_documented_in [
    rdf:type  crm:E31_Document ; 
    afl:value "Deutsche Biographie en ligne, consulté le 31.07.2019" 
  ] ; 
- crm:crm:P70i_is_documented_in [
+ crm:P70i_is_documented_in [
    rdf:type  crm:E31_Document ; 
    afl:value "https://www.deutsche-biographie.de/sfz85687.html#adbcontent" 
  ] ; 
@@ -667,11 +671,11 @@ crm:P48_has_prefered_identifier [
    afl:value  "1977-1984" 
   ]
  ] ;   
- crm:crm:P70i_is_documented_in [
+ crm:P70i_is_documented_in [
    rdf:type  crm:E31_Document ; 
    afl:value "lb.wikipedia.lu, consulté le 29.01.2018" 
  ] ; 
- crm:crm:P70i_is_documented_in [
+ crm:P70i_is_documented_in [
    rdf:type  crm:E31_Document ; 
    afl:value "https://lb.wikipedia.org/wiki/Josy_Barthel" 
  ] ; 
