@@ -7,6 +7,7 @@ This repository contains software and documents created for the Shared Authority
 - shex: contains the ShEx schemas manually converted from the excel sheets
 - examples: contains some example data
 - af2shex: Contains the converter from Excel sheets that represent domain model rules to Shape Expressions
+- [import scripts](https://github.com/weso/SAF-Lux/tree/main/import_scripts) to prepare a wikibase to host a CIDOC-CRM driven SAF
 
 ## Contributors
 
