@@ -10,9 +10,13 @@ This repository contains software and documents created for the Shared Authority
 
 ## Contributors
 
-- [Andra Waagmeester](https://github.com/andrawaag)
+- [Maarten Brinkerink]()
 - [Jose Emilio Labra Gayo](http://labra.weso.es)
-
+- [Christel Kayser]()
+- [Michelle Pfeiffer]()
+- [Joel Thill]()
+- [Andra Waagmeester](https://github.com/andrawaag)
+- [Maarten Zeinstra]()
 
 
 
