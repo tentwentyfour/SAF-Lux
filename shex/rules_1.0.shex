@@ -10,7 +10,7 @@ afl:Person {
 
     # Heading / Name
     crm:P1_is_identified_by         {
-     rdf:type [ crm:E82_Actor_appellation ] ;   # Line 4
+     rdf:type [ crm:E41_Appellation ] ;   # Line 4
      efr:R8_consists_of {
        rdf:type   [ crm:E90_Symbolic_Object ];  # Line 5
        rdfs:label [ "name"@en ] + ;
@@ -24,7 +24,7 @@ afl:Person {
 
     # Heading / Numeration
     crm:P1_is_identified_by         {
-     rdf:type [ crm:E82_Actor_appellation ] ;   # Line 7
+     rdf:type [ crm:E41_Appellation ] ;   # Line 7
      efr:R8_consists_of {
        rdf:type   [ crm:E90_Symbolic_Object ];  # Line 8
        rdfs:label [ "Numerierung"@de "numeration"@en "numérotation"@fr ] +;
@@ -34,7 +34,7 @@ afl:Person {
 
     # Heading / Title
     crm:P1_is_identified_by         {
-     rdf:type [ crm:E82_Actor_appellation ] ;   # Line 9
+     rdf:type [ crm:E41_Appellation ] ;   # Line 9
      efr:R8_consists_of {
        rdf:type   [ crm:E90_Symbolic_Object ];  # Line 10
        rdfs:label [ "Titel"@de 	"title"@en 	"titre"@fr  ] +;
@@ -44,7 +44,7 @@ afl:Person {
 
     # alternative / name
     crm:P1_is_identified_by         {                               
-    rdf:type [ crm:E82_Actor_appellation ] ;                         # Line 11   
+    rdf:type [ crm:E41_Appellation ] ;                         # Line 11   
     crm:P139_has_alternative_form {                                  # Line 12
      efr:R8_consists_of {                                            
        rdf:type   [ crm:E90_Symbolic_Object ];                       # Line 13
@@ -60,7 +60,7 @@ afl:Person {
 
     # alternative / numeration
     crm:P1_is_identified_by         {   
-      rdf:type [ crm:E82_Actor_appellation ] ;                        # Line 15
+      rdf:type [ crm:E41_Appellation ] ;                        # Line 15
       crm:P139_has_alternative_form {                                 # Line 16  
         efr:R8_consists_of {                                          # Line 17
           rdf:type   [ crm:E90_Symbolic_Object ];
@@ -72,7 +72,7 @@ afl:Person {
 
     # alternative / title
     crm:P1_is_identified_by         {   
-      rdf:type [ crm:E82_Actor_appellation ] ;                        # Line 18
+      rdf:type [ crm:E41_Appellation ] ;                        # Line 18
       crm:P139_has_alternative_form {                                 # Line 19  
         efr:R8_consists_of {                                          # Line 20
            rdf:type   [ crm:E90_Symbolic_Object ];

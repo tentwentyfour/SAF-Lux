@@ -14,9 +14,9 @@
       </crm:E55_Type>
     </crm:P2_has_type>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -31,9 +31,9 @@
                 <afl:value>Clemens Willibrordus</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P14_performed>
       <crm:E7_Activity>
@@ -67,9 +67,9 @@
       </crm:E69_Death>
     </crm:P100_died_in>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -77,14 +77,14 @@
                 <afl:value>Traiectensis</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -92,12 +92,12 @@
                 <afl:value>Ultraiectensis</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label>name</rdfs:label>
@@ -112,7 +112,7 @@
             <afl:value>Willibrordus</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P14_performed>
       <crm:E7_Activity>
@@ -125,9 +125,9 @@
       </crm:E7_Activity>
     </crm:P14_performed>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -135,9 +135,9 @@
                 <afl:value>Sanctus</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P70i_is_documented_in>
       <crm:E31_Document>
@@ -218,9 +218,9 @@
       </crm:E7_Activity>
     </crm:P14_performed>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -228,9 +228,9 @@
                 <afl:value>Aa, Pierre van der</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P14_performed>
       <crm:E7_Activity>
@@ -243,9 +243,9 @@
       </crm:E7_Activity>
     </crm:P14_performed>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -253,9 +253,9 @@
                 <afl:value>Van der Aa, Petrus</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P70i_is_documented_in>
       <crm:E31_Document>
@@ -271,9 +271,9 @@
       </crm:E42_Identifier>
     </crm:P48_has_prefered_identifier>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -281,12 +281,12 @@
                 <afl:value>Vanderanus, Petrus</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label>name</rdfs:label>
@@ -294,7 +294,7 @@
             <afl:value>Aa, Petrus van der</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P98_was_born>
       <crm:E67_Birth>
@@ -349,7 +349,7 @@
   <crm:E21_Person rdf:about="http://example.org/e2">
     <crm:P2_has_type rdf:resource="http://example.org/male"/>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label>name</rdfs:label>
@@ -357,12 +357,12 @@
             <afl:value>Cloos, Boy</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -370,9 +370,9 @@
                 <afl:value>Duchesse de Nassau</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P70i_is_documented_in>
       <crm:E31_Document>
@@ -380,9 +380,9 @@
       </crm:E31_Document>
     </crm:P70i_is_documented_in>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -390,9 +390,9 @@
                 <afl:value>Jr.</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P70i_is_documented_in>
       <crm:E31_Document>
@@ -400,9 +400,9 @@
       </crm:E31_Document>
     </crm:P70i_is_documented_in>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -410,14 +410,14 @@
                 <afl:value>Herzogin von Nassau</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -425,14 +425,14 @@
                 <afl:value>Cloos, Félix</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative title</rdfs:label>
@@ -440,14 +440,14 @@
                 <afl:value>Großherzogin von Luxemburg</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -455,9 +455,9 @@
                 <afl:value>Nassau, Charlotte Adelgonde Élisabeth Marie Wilhelmine de</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P98_was_born>
       <crm:E67_Birth>
@@ -471,7 +471,7 @@
       </crm:E67_Birth>
     </crm:P98_was_born>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label>title</rdfs:label>
@@ -479,7 +479,7 @@
             <afl:value>Grande-Duchesse de Luxembourg</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P14i_performed>
       <crm:E7_Activity>
@@ -523,9 +523,9 @@
       </crm:E31_Document>
     </crm:P70i_is_documented_in>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label xml:lang="en">alternative title</rdfs:label>
@@ -533,9 +533,9 @@
                 <afl:value>Großherzogin von Luxemburg</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P67i_is_refered_to_by>
       <crm:E89_Propositional_object>
@@ -547,7 +547,7 @@
       </crm:E89_Propositional_object>
     </crm:P67i_is_refered_to_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label xml:lang="en">name</rdfs:label>
@@ -555,7 +555,7 @@
             <afl:value>Charlotte</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P2_has_type>
       <crm:E55_Type rdf:about="http://example.org/female">
@@ -565,7 +565,7 @@
       </crm:E55_Type>
     </crm:P2_has_type>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label xml:lang="en">title</rdfs:label>
@@ -573,7 +573,7 @@
             <afl:value>Grande-Duchesse de Luxembourg</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P98_was_born>
       <crm:E67_Birth>
@@ -638,9 +638,9 @@
       </crm:E67_Birth>
     </crm:P98_was_born>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label xml:lang="en">alternative name</rdfs:label>
@@ -648,14 +648,14 @@
                 <afl:value>Nassau, Charlotte Adelgonde Élisabeth Marie Wilhelmine de</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label xml:lang="en">alternative title</rdfs:label>
@@ -663,9 +663,9 @@
                 <afl:value>Duchesse de Nassau</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P70i_is_documented_in>
       <crm:E31_Document>
@@ -679,9 +679,9 @@
       </crm:E31_Document>
     </crm:P70i_is_documented_in>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label xml:lang="en">alternative title</rdfs:label>
@@ -689,9 +689,9 @@
                 <afl:value>Herzogin von Nassau</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
   </crm:E21_Person>
   <crm:E21_Person rdf:about="http://example.org/e5">
@@ -722,9 +722,9 @@
       </crm:E69_Death>
     </crm:P100_died_in>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <crm:P139_has_alternative_form>
-          <crm:E82_Actor_appellation>
+          <crm:E41_Appellation>
             <efr:R8_consists_of>
               <crm:E90_Symbolic_Object>
                 <rdfs:label>alternative name</rdfs:label>
@@ -732,9 +732,9 @@
                 <afl:value>Barthel, Joseph</afl:value>
               </crm:E90_Symbolic_Object>
             </efr:R8_consists_of>
-          </crm:E82_Actor_appellation>
+          </crm:E41_Appellation>
         </crm:P139_has_alternative_form>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P98_was_born>
       <crm:E67_Birth>
@@ -820,7 +820,7 @@
       </crm:E7_Activity>
     </crm:P14_performed>
     <crm:P1_is_identified_by>
-      <crm:E82_Actor_appellation>
+      <crm:E41_Appellation>
         <efr:R8_consists_of>
           <crm:E90_Symbolic_Object>
             <rdfs:label>name</rdfs:label>
@@ -828,7 +828,7 @@
             <afl:value>Barthel, Josy</afl:value>
           </crm:E90_Symbolic_Object>
         </efr:R8_consists_of>
-      </crm:E82_Actor_appellation>
+      </crm:E41_Appellation>
     </crm:P1_is_identified_by>
     <crm:P14_performed>
       <crm:E7_Activity>
