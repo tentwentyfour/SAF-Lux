@@ -11,7 +11,7 @@ This repository contains software and documents created for the Shared Authority
 
 ## Contributors
 
-- [Maarten Brinkerink]()
+- [Maarten Brinkerink](https://github.com/digitaalwerktuig)
 - [Jose Emilio Labra Gayo](http://labra.weso.es)
 - [Christel Kayser]()
 - [Michelle Pfeiffer]()
