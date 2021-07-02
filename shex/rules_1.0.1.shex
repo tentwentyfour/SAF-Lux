@@ -6,15 +6,15 @@ prefix afl: <http://example.org/afl/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 afl:Person {
-    rdf:type                        [ crm:E21_Person ] ;
+    rdf:type                        [ crm:E21_Person ] ;  # Line 4
 
     # Heading / Name
     crm:P1_is_identified_by         {
-     rdf:type [ crm:E41_Appellation ] ;   # Line 4
+     rdf:type [ crm:E41_Appellation ] ;   # Line 5
      efr:R8_consists_of {
-       rdf:type   [ crm:E90_Symbolic_Object ];  # Line 5
+       rdf:type   [ crm:E90_Symbolic_Object ];  # Line 6
        rdfs:label [ "name"@en ] + ;
-       crm:P2_has_type {                        # Line 6
+       crm:P2_has_type {                        # Line 7
         rdf:type   [ crm:E55_Type ] ;
         afl:value  @afl:CL3_Name_Format
        } ;
@@ -24,9 +24,9 @@ afl:Person {
 
     # Heading / Numeration
     crm:P1_is_identified_by         {
-     rdf:type [ crm:E41_Appellation ] ;   # Line 7
+     rdf:type [ crm:E41_Appellation ] ;   # Line 8
      efr:R8_consists_of {
-       rdf:type   [ crm:E90_Symbolic_Object ];  # Line 8
+       rdf:type   [ crm:E90_Symbolic_Object ];  # Line 9
        rdfs:label [ "Numerierung"@de "numeration"@en "numérotation"@fr ] +;
        afl:value .                              # roman numbers
      }
@@ -34,13 +34,25 @@ afl:Person {
 
     # Heading / Title
     crm:P1_is_identified_by         {
-     rdf:type [ crm:E41_Appellation ] ;   # Line 9
+     rdf:type [ crm:E41_Appellation ] ;   # Line 10
      efr:R8_consists_of {
-       rdf:type   [ crm:E90_Symbolic_Object ];  # Line 10
+       rdf:type   [ crm:E90_Symbolic_Object ];  # Line 11
        rdfs:label [ "Titel"@de 	"title"@en 	"titre"@fr  ] +;
        afl:value  xsd:string                    # free text, Filiation or associated titles
      }
     } ?  ;
+
+    # Source of information name
+    crm:P1_is_identified_by         {
+     rdf:type [ crm:E41_Appellation ] ;   # Line 12
+     crm:P70i_is_documented_in {
+       rdf:type   [ crm:E31_Document ];  # Line 13
+       crm:P2_has_type {
+           rdf:type   [ crm:E55_Type ] ; # Line 14
+       }
+     }
+    } ?  ;
+
 
     # alternative / name
     crm:P1_is_identified_by         {                               
