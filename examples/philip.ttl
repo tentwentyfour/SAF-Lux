@@ -1,0 +1,38 @@
+prefix crm:  <http://erlangen-crm.org/current/>
+prefix efr:  <http://erlangen-crm.org/efrbroo/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix :     <http://example.org/>
+prefix afl:  <http://example.org/afl/>
+
+# Example of Philip IV
+# https://en.wikipedia.org/wiki/Philip_IV,_Count_of_Nassau-Weilburg
+
+:philip rdf:type crm:E21_Person ;
+ crm:P1_is_identified_by :philipNameAppellation .
+
+:philipNameAppellation  rdf:type crm:E41_Appellation ;
+  efr:R8_consists_of :philipName, 
+                     :philipNumeration, 
+                     :philipTitle ;
+  crm:P70i_is_documented_in afl:wikipedia .
+
+:philipName rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "name"@en ;
+   crm:P2_has_type afl:direct ;
+   afl:value "Philip" .
+
+:philipNumeration rdf:type crm:E90_Symbolic_Object ;
+   rdfs:label "numeration"@en ;
+   afl:value "IV" .
+
+:philipTitle rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "title"@en ;
+    afl:value "Nassau-Weilburg" .
+
+afl:direct a         crm:E55_Type ;
+           afl:value "0" .
+
+afl:wikipedia rdf:type crm:E31_Document ;
+    rdfs:label "source_of_information" ;
+    afl:value "http://www.wikipedia.org" .
