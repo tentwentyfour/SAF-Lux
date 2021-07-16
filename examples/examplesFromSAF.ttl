@@ -11,7 +11,7 @@ prefix afl:  <http://example.org/afl/>
 
 :e1            rdf:type                        crm:E21_Person ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "name"@en ;
@@ -20,7 +20,7 @@ prefix afl:  <http://example.org/afl/>
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [ 
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "title"@en ;
@@ -29,9 +29,9 @@ prefix afl:  <http://example.org/afl/>
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title"@en ;
@@ -41,9 +41,9 @@ prefix afl:  <http://example.org/afl/>
   ] 
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title"@en ;
@@ -53,9 +53,9 @@ prefix afl:  <http://example.org/afl/>
   ]
  ] ; 
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title"@en ;
@@ -65,9 +65,9 @@ prefix afl:  <http://example.org/afl/>
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name"@en ;
@@ -152,7 +152,7 @@ crm:P67i_is_refered_to_by [
 
 :e2 rdf:type crm:E21_Person ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "name" ;
@@ -161,9 +161,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
@@ -173,9 +173,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -185,7 +185,7 @@ crm:P67i_is_refered_to_by [
   ] 
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [ 
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "title" ;
@@ -194,9 +194,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -206,9 +206,9 @@ crm:P67i_is_refered_to_by [
   ] 
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -218,9 +218,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ; 
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -230,9 +230,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
@@ -315,7 +315,7 @@ crm:P67i_is_refered_to_by [
 
 :e3 rdf:type crm:E21_Person ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "name" ;
@@ -324,9 +324,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
@@ -336,9 +336,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
@@ -348,9 +348,9 @@ crm:P67i_is_refered_to_by [
   ]
  ] ; 
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
@@ -430,7 +430,7 @@ crm:P48_has_prefered_identifier [
 
 :e4 rdf:type crm:E21_Person ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "name" ;
@@ -439,9 +439,9 @@ crm:P48_has_prefered_identifier [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
@@ -451,9 +451,9 @@ crm:P48_has_prefered_identifier [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -463,9 +463,9 @@ crm:P48_has_prefered_identifier [
   ]
  ] ; 
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -475,9 +475,9 @@ crm:P48_has_prefered_identifier [
   ]
  ] ; 
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative title" ;
@@ -557,7 +557,7 @@ crm:P48_has_prefered_identifier [
 
 :e5 rdf:type crm:E21_Person ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   efr:R8_consists_of [
    rdf:type crm:E90_Symbolic_Object ;
    rdfs:label "name" ;
@@ -566,9 +566,9 @@ crm:P48_has_prefered_identifier [
   ]
  ] ;
  crm:P1_is_identified_by [
-  rdf:type crm:E82_Actor_appellation ;
+  rdf:type crm:E41_Appellation ;
   crm:P139_has_alternative_form [
-   rdf:type           crm:E82_Actor_appellation ;
+   rdf:type           crm:E41_Appellation ;
    efr:R8_consists_of [
     rdf:type crm:E90_Symbolic_Object ;
     rdfs:label "alternative name" ;
