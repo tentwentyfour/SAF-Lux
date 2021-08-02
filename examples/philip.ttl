@@ -1,10 +1,13 @@
-prefix crm:  <http://erlangen-crm.org/current/>
-prefix efr:  <http://erlangen-crm.org/efrbroo/>
+# CHANGE LOG 
+# 2021-08-02. Changed namespaces of crm, efr and afl
+
+prefix crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+prefix efr:  <http://iflastandards.info/ns/fr/frbr/frbroo/>
 prefix edtf: <http://id.loc.gov/datatypes/edtf>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix :     <http://example.org/>
-prefix afl:  <http://example.org/afl/>
+prefix afl:  <http://data.culture.lu/ns>
 
 # Example of Philip IV
 # https://en.wikipedia.org/wiki/Philip_IV,_Count_of_Nassau-Weilburg
