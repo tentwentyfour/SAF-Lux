@@ -1,0 +1,67 @@
+@prefix efr:   <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix afl:   <http://data.culture.lu/ns/saf/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix edtf:  <http://id.loc.gov/datatypes/edtf/> .
+@prefix crm:   <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<>      a         <http://www.w3.org/2002/07/owl#Ontology> ;
+        dc:title  "Shared Authority File Luxembourgh Vocabulary" .
+
+afl:indirect  a  afl:NameType .
+
+afl:alternativeNumeration
+        a           afl:Label ;
+        rdfs:label  "Alternative numeration"@en .
+
+afl:name  a         afl:Label ;
+        rdfs:label  "Name"@en .
+
+afl:gender  a       afl:Label ;
+        rdfs:label  "Gender"@en .
+
+afl:idSource  a     afl:Label ;
+        rdfs:label  "ID Source"@en .
+
+afl:title  a        afl:Label ;
+        rdfs:label  "Title"@en .
+
+afl:numeration  a   afl:Label ;
+        rdfs:label  "Numeration"@en .
+
+afl:endDate  a      afl:Label ;
+        rdfs:label  "End date"@en .
+
+afl:value  a        rdf:Property ;
+        rdfs:label  "Value"@en .
+
+afl:alternativeTitle  a  afl:Label ;
+        rdfs:label  "Alternative title"@en .
+
+afl:direct  a   afl:NameType .
+
+afl:sourceOfInformation
+        a           afl:Label ;
+        rdfs:label  "Source of information"@en .
+
+afl:beginningDate  a  afl:Label ;
+        rdfs:label  "Beginning date"@en .
+
+afl:label  a        rdf:Property ;
+        rdfs:label  "Label"@en ;
+        rdfs:range  afl:Label .
+
+afl:Label  a    rdf:Class .
+
+afl:profession  a   afl:Label ;
+        rdfs:label  "Profession"@en .
+
+afl:id  a           afl:Label ;
+        rdfs:label  "ID"@en .
+
+afl:NameType  a  rdfs:Class .
+
+afl:alternativeName  a  afl:Label ;
+        rdfs:label  "Alternative name"@en .

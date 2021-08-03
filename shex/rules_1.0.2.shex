@@ -2,7 +2,7 @@
 # 2021-08-02 Changed namespaces for afl, crm and efr
 # 2021-02-02 Added some annotations so we can generate RDFS vocabulary from this ShEx
 
-prefix afl:  <http://data.culture.lu/ns>
+prefix afl:  <http://data.culture.lu/ns/saf/>
 prefix crm:  <http://www.cidoc-crm.org/cidoc-crm/>
 prefix efr:  <http://iflastandards.info/ns/fr/frbr/frbroo/>
 prefix edtf: <http://id.loc.gov/datatypes/edtf/>
@@ -328,7 +328,7 @@ afl:endDate {
 
 # This shape is a placeholder to collect annotations that can be used to generate an RDFS vocabulary
 # This feature is experimental because it could be easier to just use an RDFS vocabulary
-<Annotations> {
+afl:Annotations {
  afl:value . 
    // a rdf:Property
    // rdfs:label "Value"@en ;
