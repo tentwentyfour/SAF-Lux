@@ -18,4 +18,4 @@ This repository contains software and documents created for the Shared Authority
 - [Joel Thill]()
 - [Andra Waagmeester](https://github.com/andrawaag)
 - [Maarten Zeinstra](https://github.com/mzeinstra)
-- [Michelle Pfeiffer] (https://github.com/michellePfeiffer)
+- [Michelle Pfeiffer](https://github.com/michellePfeiffer)
