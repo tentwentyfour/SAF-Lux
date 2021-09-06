@@ -5,7 +5,6 @@
 # This script builds on an excel file that is provided by the data modellers. That excel file **TODO** Provide a link to repository containing the latest version(s).
 # That file contains the CIDOC-CRM representation of the SAF with mappings to the perceived Wikibase(Qualifier).
 
-# In[51]:
 
 from wikidataintegrator import wdi_core, wdi_login, wdi_config
 from getpass import getpass
@@ -30,7 +29,6 @@ model_def
 
 # # Create properties
 
-# In[53]:
 
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
@@ -52,8 +50,7 @@ def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="",
 
 # # OWL properties to capture CIDOC-CRM
 
-# In[54]:
-
+## DR: First we create the main properties (These will become P1, P2, etc.)
 
 # instance of
 createProperty(login, lulabel="ass eng",
@@ -99,6 +96,15 @@ createProperty(login, lulabel="invers vun",
                       frlabel="inverse de",
                       delabel="invers von",
                       property_datatype="wikibase-item")
+
+## DR: Once they have been created, we fetch them from the WDQS, so that we may learn their prop (e.g. "P1") and corresponding label "e.g. 'instance of'"
+## This will be a list like:
+##
+# prop	propLabel
+# http://mediawiki.svc/entity/P1	instance of
+# http://mediawiki.svc/entity/P2	subclass of
+
+
 propertyID = dict()
 query = """SELECT ?prop ?propLabel WHERE {
   ?prop wikibase:directClaim ?wdt .
@@ -108,7 +114,9 @@ for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe
     print(row["prop"].replace(entityUri, ""), row["propLabel"])
     propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
 
-# Why do we set propertyID? it's never used afterwards
+## DR: Why do we set propertyID? it's never used afterwards
+
+## DR: We additionally create two items named "Class" (Q1) and "Property" (Q2)
 
 # class item
 localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api, sparql)
@@ -127,7 +135,6 @@ item.write(login)
 
 # # Read the property definitions from the DM_SAF
 
-# In[55]:
 for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
         print(row["Data type"])
