@@ -2,39 +2,33 @@
 # coding: utf-8
 
 # # Notebook to create a new LUX-SAF Wikibase instance
-# This script builds on an excel file that is provided by the data modellers. That excel file **TODO** Provide a link to repository containing the latest version(s). 
-# That file contains the CIDOC-CRM representation of the SAF with mappings to the perceived Wikibase(Qualifier). 
+# This script builds on an excel file that is provided by the data modellers. That excel file **TODO** Provide a link to repository containing the latest version(s).
+# That file contains the CIDOC-CRM representation of the SAF with mappings to the perceived Wikibase(Qualifier).
 
-# In[51]:
 
 from wikidataintegrator import wdi_core, wdi_login, wdi_config
 from getpass import getpass
 import pandas as pd
 import os
 
-
-
 wikibase = os.environ["WIKIBASE_HOST"]
-api = wikibase+":8080/w/api.php"  ## TODO: Need to verify if the portnumber is accurate
-sparql = wikibase+":9999/bigdata/namespace/wdq/sparql"
-# alternative
-## sparql = os.environ["WDQS_HOST"]
+api = wikibase+":8080/w/api.php"
+sparql = wikibase+":8282/proxy/wdqs/bigdata/namespace/wdq/sparql"
+entityUri = "http://mediawiki.svc/entity/"  # this is used to strip it from results!
 
 WBUSER = os.environ["MW_ADMIN_NAME"]
 WBPASS = os.environ["MW_ADMIN_PASS"]
 login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
-localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
+localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api, sparql)
 
 
 # # import data
-
 model_def = pd.read_excel("DM_SAF_vers.1.0.2_andra.xlsx", header=1)
 model_def
 
 
 # # Create properties
 
-# In[53]:
 
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
@@ -50,60 +44,67 @@ def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="",
     item.set_label(delabel, lang="de")
     item.set_label(frlabel, lang="fr")
     item.set_description(description, lang="en")
-    
+
     print(item.write(login, entity_type="property", property_datatype=property_datatype))
 
 
 # # OWL properties to capture CIDOC-CRM
 
-# In[54]:
-
+## DR: First we create the main properties (These will become P1, P2, etc.)
 
 # instance of
-createProperty(login, lulabel="ass eng", 
+createProperty(login, lulabel="ass eng",
                       enlabel="instance of",
                       frlabel="instance de",
                       delabel="ist ein(e)",
                       property_datatype="wikibase-item")
 
-# subclass of 
-## 
-createProperty(login, lulabel="Ënnerklass vu(n)", 
+# subclass of
+createProperty(login, lulabel="Ënnerklass vu(n)",
                       enlabel="subclass of",
                       frlabel="sous-classe de",
                       delabel="Unterklasse von",
                       property_datatype="wikibase-item")
 # skos:exact match
-createProperty(login, lulabel="genauen Match", 
+createProperty(login, lulabel="genauen Match",
                       enlabel="exact match",
                       frlabel="correspondance exacte",
                       delabel="exakte Übereinstimmung",
                       description="mapping",
                       property_datatype="url")
-#domain 
-createProperty(login, lulabel="domain", 
+#domain
+createProperty(login, lulabel="domain",
                       enlabel="domain",
                       frlabel="domaine",
                       delabel="domain",
                       property_datatype="wikibase-item")
 #range
-createProperty(login, lulabel="reechwäit", 
+createProperty(login, lulabel="reechwäit",
                       enlabel="range",
                       frlabel="intervalle",
                       delabel="reichweite",
                       property_datatype="wikibase-item")
 #subPropertyOf
-createProperty(login, lulabel="Ënnerbesëtz vun", 
+createProperty(login, lulabel="Ënnerbesëtz vun",
                       enlabel="subproperty of",
                       frlabel="sous-propriété de",
                       delabel="untereigenschaft von",
                       property_datatype="wikibase-item")
 #inverseOf
-createProperty(login, lulabel="invers vun", 
+createProperty(login, lulabel="invers vun",
                       enlabel="inverse of",
                       frlabel="inverse de",
                       delabel="invers von",
                       property_datatype="wikibase-item")
+
+## DR: Once they have been created, we fetch them from the WDQS, so that we may learn their prop (e.g. "P1") and corresponding label "e.g. 'instance of'"
+## This will be a list like:
+##
+# prop	propLabel
+# http://mediawiki.svc/entity/P1	instance of
+# http://mediawiki.svc/entity/P2	subclass of
+
+
 propertyID = dict()
 query = """SELECT ?prop ?propLabel WHERE {
   ?prop wikibase:directClaim ?wdt .
@@ -113,29 +114,39 @@ for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe
     print(row["prop"].replace(entityUri, ""), row["propLabel"])
     propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
 
+## DR: Why do we set propertyID? it's never used afterwards
+
+## DR: We additionally create two items named "Class" (Q1) and "Property" (Q2)
+
 # class item
-localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
+localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api, sparql)
 item = localEntityEngine(new_item=True)
 item.set_label("Class", lang="en")
 item.set_aliases(["Owl:Class"], lang="en")
 item.write(login)
 
 # property item
-localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
+localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api, sparql)
 item = localEntityEngine(new_item=True)
 item.set_label("Property", lang="en")
 item.set_aliases(["owl:ObjectProperty"], lang="en")
 item.write(login)
 
 
-# # Read the property definitions from the DM_SAF 
+# # Read the property definitions from the DM_SAF
 
-# In[55]:
 for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
         print(row["Data type"])
         try:
-            createProperty(login, enlabel=row["English"], frlabel=row["français"], delabel=row["Deutsch"], description="Lux SAF Property", property_datatype=row["Data type"].strip()) 
+            createProperty(
+                login,
+                enlabel=row["English"],
+                frlabel=row["français"],
+                delabel=row["Deutsch"],
+                description="Lux SAF Property",
+                property_datatype=row["Data type"].strip()
+            )
         except:
             print("Error with ", row["English"])
     else:
@@ -147,8 +158,7 @@ for index, row in model_def.iterrows():
 
 # In[56]:
 
-
-CL4 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL4 GENDER")
+CL4 = pd.read_excel("DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL4 GENDER")
 for index, row in CL4.iterrows():
     print(row["Label (English)"])
     item = localEntityEngine(new_item=True)
@@ -163,7 +173,7 @@ for index, row in CL4.iterrows():
 # In[57]:
 
 
-CL5 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL5 STATUS")
+CL5 = pd.read_excel("DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL5 STATUS")
 for index, row in CL5.iterrows():
     print(row["Label (English)"])
     item = localEntityEngine(new_item=True)
@@ -176,7 +186,7 @@ for index, row in CL5.iterrows():
 # In[58]:
 
 
-CL3 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL3 Name Format")
+CL3 = pd.read_excel("DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL3 Name Format")
 for index, row in CL3.iterrows():
     item = localEntityEngine(new_item=True)
     item.set_label(row["Cataloging specs"])
@@ -189,7 +199,7 @@ for index, row in CL3.iterrows():
 
 
 #ARK
-createProperty(login, lulabel="ARK", 
+createProperty(login, lulabel="ARK",
                       enlabel="ARK",
                       frlabel="ARK",
                       delabel="ARK",
