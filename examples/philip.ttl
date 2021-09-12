@@ -7,7 +7,7 @@ prefix edtf: <http://id.loc.gov/datatypes/edtf>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix :     <http://example.org/>
-prefix afl:  <http://data.culture.lu/ns>
+prefix afl:  <http://data.culture.lu/ns/saf/>
 
 # Example of Philip IV
 # https://en.wikipedia.org/wiki/Philip_IV,_Count_of_Nassau-Weilburg
