@@ -108,3 +108,4 @@ dist
 
 # Actual files present in this repo
 .ipynb_checkpoints/
+.~*

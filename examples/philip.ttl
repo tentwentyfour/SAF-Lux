@@ -23,25 +23,25 @@ prefix afl:  <http://data.culture.lu/ns/>
   crm:P139_has_alternative_form :a2, :a3 .
 
 :name1 a crm:E90_Symbolic_Object ;
-   afl:label afl:name ;
-   crm:P2_has_type afl:direct ;
-   afl:value "Philip" .
+  afl:label afl:name ;
+  crm:P2_has_type afl:direct ;
+  afl:value "Philip" .
 
 :numeration1 a crm:E90_Symbolic_Object ;
-   afl:label afl:numeration ;
-   afl:value "IV" .
+  afl:label afl:numeration ;
+  afl:value "IV" .
 
 :title1 a crm:E90_Symbolic_Object ;
-    afl:label afl:title ;
-    afl:value "Nassau-Weilburg" .
+  afl:label afl:title ;
+  afl:value "Nassau-Weilburg" .
 
 :a2 a crm:E41_Appellation ;
- efr:R8_consists_of :name2, :numeration2, :title2 ;
- crm:P70i_is_documented_in :wikipedia .
+  efr:R8_consists_of :name2, :numeration2, :title2 ;
+  crm:P70i_is_documented_in :wikipedia .
 
 :a3 a crm:E41_Appellation ;
- efr:R8_consists_of :name3, :numeration3 ;
- crm:P70i_is_documented_in :dnb .
+  efr:R8_consists_of :name3, :numeration3 ;
+  crm:P70i_is_documented_in :dnb .
 
 :name2 a crm:E90_Symbolic_Object ;
   afl:label afl:alternativeName  ;
