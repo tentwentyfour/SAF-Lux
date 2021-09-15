@@ -1,4 +1,5 @@
 # CHANGE LOG
+# 2021-09-15 Added start declaration
 # 2021-08-02 Changed namespaces for afl, crm and efr
 # 2021-02-02 Added some annotations so we can generate RDFS vocabulary from this ShEx
 
@@ -9,6 +10,8 @@ prefix edtf: <http://id.loc.gov/datatypes/edtf/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+start=@afl:Person
 
 afl:Person {
   rdf:type                        [ crm:E21_Person ]                ;  
