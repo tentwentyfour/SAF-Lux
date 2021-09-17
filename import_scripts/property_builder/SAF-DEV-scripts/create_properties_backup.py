@@ -5,12 +5,14 @@
 # This script builds on an excel file that is provided by the data modellers. That excel file **TODO** Provide a link to repository containing the latest version(s). 
 # That file contains the CIDOC-CRM representation of the SAF with mappings to the perceived Wikibase(Qualifier). 
 
-# In[1]:
-
+# In[51]:
 
 from wikidataintegrator import wdi_core, wdi_login, wdi_config
 from getpass import getpass
 import pandas as pd
+import os
+
+
 
 wikibase = os.environ["WIKIBASE_HOST"]
 api = wikibase+":8080/w/api.php"  ## TODO: Need to verify if the portnumber is accurate
@@ -25,16 +27,14 @@ localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparq
 
 
 # # import data
-# In[52]:
 
-
-model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xlsx", header=1)
+model_def = pd.read_excel("DM_SAF_vers.1.0.2_andra.xlsx", header=1)
 model_def
 
 
 # # Create properties
 
-# In[4]:
+# In[53]:
 
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
@@ -92,10 +92,6 @@ createProperty(login, lulabel="reechwäit",
                       frlabel="intervalle",
                       delabel="reichweite",
                       property_datatype="wikibase-item")
-
-#property
-createProperty(login, enlabel="property", 
-                       property_datatype="wikibase-item")
 #subPropertyOf
 createProperty(login, lulabel="Ënnerbesëtz vun", 
                       enlabel="subproperty of",
@@ -135,8 +131,6 @@ item.write(login)
 # # Read the property definitions from the DM_SAF 
 
 # In[55]:
-
-
 for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
         print(row["Data type"])
@@ -179,8 +173,6 @@ for index, row in CL5.iterrows():
     print(item.write(login))
 
 
-# # CL3 Name Format
-
 # In[58]:
 
 
@@ -189,21 +181,6 @@ for index, row in CL3.iterrows():
     item = localEntityEngine(new_item=True)
     item.set_label(row["Cataloging specs"])
     print(item.write(login))
-
-
-# # CL8 internal identifiers
-
-# In[11]:
-
-
-CL8 =  pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL8 INTERNAL IDENTIFIER")
-for index, row in CL8.iterrows():
-    print(row["Label "])
-    createProperty(login, lulabel=row["Label "].strip(), 
-                      enlabel=row["Label "].strip(),
-                      frlabel=row["Label "].strip(),
-                      delabel=row["Label "].strip(),
-                      property_datatype="external-id")
 
 
 # # manually added external identifiers not yet covered in DMG
@@ -219,23 +196,9 @@ createProperty(login, lulabel="ARK",
                       property_datatype="url")
 
 
-# In[1]:
-
-
 person_item = localEntityEngine(new_item=True)
 person_item.set_label("E21 Person", lang="en")
 print(person_item.write(login))
-
-
-# In[5]:
-
-
-#property
-createProperty(login, enlabel="property", 
-                       property_datatype="wikibase-item")
-
-
-# In[ ]:
 
 
 
