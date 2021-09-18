@@ -1,81 +1,18 @@
-prefix crm:  <http://erlangen-crm.org/current/>
-prefix efr:  <http://erlangen-crm.org/efrbroo/>
+prefix :     <http://example.org/>
+prefix afl:  <http://data.culture.lu/ns/saf/>
+prefix crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+prefix efr:  <http://iflastandards.info/ns/fr/frbr/frbroo/>
+prefix edtf: <http://id.loc.gov/datatypes/edtf/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix :     <http://example.org/>
-prefix afl:  <http://example.org/afl/>
+prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
 
 # These examples come from the Excel sheet
 # https://docs.google.com/spreadsheets/d/1h6QZlsnqo54ltAoOlnF6AFi2gGxksKZU/
 # Tab Examples.
 
-:e1            rdf:type                        crm:E21_Person ;
- crm:P1_is_identified_by [
-  rdf:type crm:E41_Appellation ;
-  efr:R8_consists_of [
-   rdf:type crm:E90_Symbolic_Object ;
-   rdfs:label "name"@en ;
-   crm:P2_has_type afl:direct ;
-   afl:value "Charlotte" 
-  ]
- ] ;
- crm:P1_is_identified_by [
-  rdf:type crm:E41_Appellation ;
-  efr:R8_consists_of [ 
-   rdf:type crm:E90_Symbolic_Object ;
-   rdfs:label "title"@en ;
-   crm:P2_has_type afl:free_text ;
-   afl:value "Grande-Duchesse de Luxembourg" 
-  ]
- ] ;
- crm:P1_is_identified_by [
-  rdf:type crm:E41_Appellation ;
-  crm:P139_has_alternative_form [
-   rdf:type           crm:E41_Appellation ;
-   efr:R8_consists_of [
-    rdf:type crm:E90_Symbolic_Object ;
-    rdfs:label "alternative title"@en ;
-    crm:P2_has_type afl:free_text ;
-    afl:value "Duchesse de Nassau" 
-   ] 
-  ] 
- ] ;
- crm:P1_is_identified_by [
-  rdf:type crm:E41_Appellation ;
-  crm:P139_has_alternative_form [
-   rdf:type           crm:E41_Appellation ;
-   efr:R8_consists_of [
-    rdf:type crm:E90_Symbolic_Object ;
-    rdfs:label "alternative title"@en ;
-    crm:P2_has_type afl:free_text ;
-    afl:value "Großherzogin von Luxemburg" 
-   ]
-  ]
- ] ; 
- crm:P1_is_identified_by [
-  rdf:type crm:E41_Appellation ;
-  crm:P139_has_alternative_form [
-   rdf:type           crm:E41_Appellation ;
-   efr:R8_consists_of [
-    rdf:type crm:E90_Symbolic_Object ;
-    rdfs:label "alternative title"@en ;
-    crm:P2_has_type afl:free_text ;
-    afl:value "Herzogin von Nassau" 
-   ]
-  ]
- ] ;
- crm:P1_is_identified_by [
-  rdf:type crm:E41_Appellation ;
-  crm:P139_has_alternative_form [
-   rdf:type           crm:E41_Appellation ;
-   efr:R8_consists_of [
-    rdf:type crm:E90_Symbolic_Object ;
-    rdfs:label "alternative name"@en ;
-    crm:P2_has_type afl:indirect ;
-    afl:value "Nassau, Charlotte Adelgonde Élisabeth Marie Wilhelmine de" 
-   ]
-  ]
- ] ;
+:e1 rdf:type crm:E21_Person ;
+ crm:P1_is_identified_by :name_e1 ;
  crm:P98_was_born [
   rdf:type             crm:E67_Birth ;  
   crm:P7_took_place_at :Luxembourg ;
@@ -149,6 +86,68 @@ crm:P67i_is_refered_to_by [
   ]
 ]
 .
+
+:name_e1 rdf:type crm:E41_Appellation ;
+  efr:R8_consists_of :name_e1_symbol ,
+                     :title_e1_symbol ;
+  crm:P139_has_alternative_form :alt_e1 .                   
+
+:name_e1_symbol rdf:type crm:E90_Symbolic_Object ;
+   afl:label afl:name ;
+   crm:P2_has_type afl:directType ;
+   afl:value "Charlotte" .
+
+:title_e1_symbol rdf:type crm:E90_Symbolic_Object ;
+   afl:label afl:title ;
+   crm:P2_has_type afl:free_text ;
+   afl:value "Grande-Duchesse de Luxembourg" 
+   .
+
+:alt_e1 rdf:type crm:E41_Appellation ;
+   efr:R8_consists_of [
+    rdf:type crm:E90_Symbolic_Object ;
+    afl:label afl:alternativeTitle ;
+    crm:P2_has_type afl:free_text ;
+    afl:value "Duchesse de Nassau" 
+  ] .
+# ] ;
+# crm:P1_is_identified_by [
+#  rdf:type crm:E41_Appellation ;
+#  crm:P139_has_alternative_form [
+#   rdf:type           crm:E41_Appellation ;
+#   efr:R8_consists_of [
+#    rdf:type crm:E90_Symbolic_Object ;
+#    rdfs:label "alternative title"@en ;
+#    crm:P2_has_type afl:free_text ;
+#    afl:value "Großherzogin von Luxemburg" 
+#   ]
+#  ]
+# ] ; 
+# crm:P1_is_identified_by [
+#  rdf:type crm:E41_Appellation ;
+#  crm:P139_has_alternative_form [
+#   rdf:type           crm:E41_Appellation ;
+#   efr:R8_consists_of [
+#    rdf:type crm:E90_Symbolic_Object ;
+#    rdfs:label "alternative title"@en ;
+#    crm:P2_has_type afl:free_text ;
+#    afl:value "Herzogin von Nassau" 
+#   ]
+#  ]
+# ] ;
+# crm:P1_is_identified_by [
+#  rdf:type crm:E41_Appellation ;
+#  crm:P139_has_alternative_form [
+#   rdf:type           crm:E41_Appellation ;
+#   efr:R8_consists_of [
+#    rdf:type crm:E90_Symbolic_Object ;
+#    rdfs:label "alternative name"@en ;
+#    crm:P2_has_type afl:indirect ;
+#    afl:value "Nassau, Charlotte Adelgonde Élisabeth Marie Wilhelmine de" 
+#   ]
+#  ]
+# ] .
+ 
 
 :e2 rdf:type crm:E21_Person ;
  crm:P1_is_identified_by [
@@ -701,11 +700,11 @@ crm:P48_has_prefered_identifier [
 #                  rdfs:label                     "authority_file" .
 
 :male            rdf:type                         crm:E55_Type ;
-                 rdfs:label                       "gender"     ;
-                 afl:value                        1            .
+                 afl:label                        afl:gender     ;
+                 afl:value                        afl:male       .
 :female          rdf:type                         crm:E55_Type ;
-                 rdfs:label                       "gender"     ;
-                 afl:value                        2            .
+                 afl:label                        afl:gender     ;
+                 afl:value                        afl:female     .
 
 
 :Luxembourg rdf:type crm:E53_Place ;
@@ -720,16 +719,19 @@ crm:P48_has_prefered_identifier [
           rdfs:label "place of birth" ;
           afl:value "Grande Bretagne"  .
 
-afl:direct   rdf:type   crm:E55_Type ;
+afl:directType rdf:type   crm:E55_Type ;
              rdfs:label "Direct order"@en ;
              rdfs:label "Direkte Folge"@de ;
              rdfs:label "ordre direct"@fr  ;
-             afl:value "0" .  
-afl:indirect rdf:type   crm:E55_Type ;
+             afl:value afl:directForm .  
+afl:indirectType rdf:type   crm:E55_Type ;
              rdfs:label "Indirect order"@en  ;
              rdfs:label "Indirekte Folge"@de ;
              rdfs:label "ordre indirect"@fr ;
-             afl:value "1" .             
+             afl:value afl:indirectForm .             
 
 # Some values in the rules are "Only roman numbers till XXX"
 afl:controlled_list rdf:type   crm:E55_Type .  
+
+afl:free_text rdf:type crm:E55_Type ;
+     afl:value afl:directForm  .  

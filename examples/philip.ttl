@@ -99,13 +99,13 @@ prefix afl:  <http://data.culture.lu/ns/saf/>
     afl:value "https://www.dnb.de/" .
 
 # The following data is common to all instances
-afl:direct a         crm:E55_Type ;
-    afl:value "0" .
+afl:direct a crm:E55_Type ;
+  afl:value afl:directForm .
 
-afl:name rdfs:label "name"@en .
-afl:title rdfs:label "title"@en .
+afl:name       rdfs:label "name"@en .
+afl:title      rdfs:label "title"@en .
 afl:numeration rdfs:label "numeration"@en .
 
-afl:alternativeName rdfs:label "alternative name"@en .
-afl:alternativeTitle rdfs:label "title"@en .
-afl:alternativeNumeration rdfs:label "numeration"@en .
+afl:alternativeName       rdfs:label "alternative name"@en .
+afl:alternativeTitle      rdfs:label "alternative title"@en .
+afl:alternativeNumeration rdfs:label "alternative numeration"@en .
