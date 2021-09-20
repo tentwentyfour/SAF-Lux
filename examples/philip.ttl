@@ -58,12 +58,12 @@ prefix afl:  <http://data.culture.lu/ns/saf/>
 
 :name3 a crm:E90_Symbolic_Object ;
   afl:label afl:alternativeName  ;
-  crm:P2_has_type afl:direct     ;
-  afl:value "Phillip"             .
+  crm:P2_has_type afl:direct ;
+  afl:value "Phillip" .
 
 :numeration3 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeNumeration   ;
- afl:value "IV"                        .
+ afl:label afl:alternativeNumeration ;
+ afl:value "IV" .
 
 # Birth place
 
@@ -107,5 +107,5 @@ afl:title      rdfs:label "title"@en .
 afl:numeration rdfs:label "numeration"@en .
 
 afl:alternativeName       rdfs:label "alternative name"@en .
-afl:alternativeTitle      rdfs:label "alternative title"@en .
-afl:alternativeNumeration rdfs:label "alternative numeration"@en .
+afl:alternativeTitle      rdfs:label "title"@en .
+afl:alternativeNumeration rdfs:label "numeration"@en .
