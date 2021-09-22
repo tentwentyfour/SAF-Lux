@@ -1,1 +1,1 @@
-validate -x ../shex/rules_1.0.2.shex -d philip.ttl -n http://example.org/philip -s http://data.culture.lu/ns/saf/Person
+validate -x ../shex/rules_1.0.3.shex -d philip.ttl -n http://example.org/philip -s http://data.culture.lu/ns/saf/Person

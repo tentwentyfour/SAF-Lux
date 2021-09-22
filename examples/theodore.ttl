@@ -1,116 +1,113 @@
-     prefix crm:  <http://erlangen-crm.org/current/>
-     prefix efr:  <http://erlangen-crm.org/efrbroo/>
-     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-     prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-     prefix :     <http://example.org/>
-     prefix afl:  <http://example.org/afl/>
+prefix :     <http://example.org/>
+prefix afl:  <http://data.culture.lu/ns/saf/>
+prefix crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+prefix efr:  <http://iflastandards.info/ns/fr/frbr/frbroo/>
+prefix edtf: <http://id.loc.gov/datatypes/edtf/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-     :e1            rdf:type                        crm:E21_Person ;
-                    crm:P48_has_prefered_identifier :e1_external_id ;      # External standard identifier
-                    crm:P67i_is_refered_to_by       :e1_internal_id_po ;   # Internal standard identifier
-                    crm:P131_is_identified_by       :name_e1 ;             # Name
-                    crm:P131_is_identified_by       :alt_title_e1 ;        # Alternative title
-                    crm:P131_is_identified_by       :alt_num_e1 ;          # Alternative numeration
-                    crm:P98_was_born                :birth_e1 ;            # Birth
-                    crm:P100_died_in                :death_e1 ;            # Death
-                    crm:P2_has_type                 :male ;                # Gender 
-                    crm:P14_performed               :profession_e1 ;       # Profession
-                    crm:P14_performed               :activity_e1   ;       # Activity
+:e1            rdf:type                        crm:E21_Person ;
+               crm:P48_has_prefered_identifier :e1_external_id ;      # External standard identifier
+               crm:P67i_is_refered_to_by       :e1_internal_id_po ;   # Internal standard identifier
+               crm:P1_is_identified_by         :name_e1 ;             # Name
+               crm:P98_was_born                :birth_e1 ;            # Birth
+               crm:P100_died_in                :death_e1 ;            # Death
+               crm:P2_has_type                 :male ;                # Gender 
+               crm:P14_performed               :profession_e1 ;       # Profession
+               crm:P14_performed               :activity_e1   ;       # Activity
      .
 
-     :e1_external_id rdf:type                        crm:E42_Identifier ;
-                     rdfs:label                      "identifier"    ;
-                     crm:P2_has_type                 :idType1        ;
-                     afl:value                       "152240"        .
+:e1_external_id rdf:type                        crm:E42_Identifier ;
+                afl:label                       afl:id    ;
+                crm:P2_has_type                 :idType1        ;
+                afl:value                       "152240"        .
 
-     :idType1        rdf:type                        crm:E55_Type ;
-                     crm:P71_is_listed_in            :listIds     ;
-                     afl:value                       "SSMN"       .
+:idType1        rdf:type                        crm:E55_Type ;
+                afl:label                       afl:idSource ;
+                crm:P71_is_listed_in            :listIds     ;
+                afl:value                       "SSMN"       .
 
-     :listIds        rdf:type                    crm:E32_Authority_document ;
-                     rdfs:label                      "authority_file" .
+:listIds        rdf:type                        crm:E32_Authority_document ;
+                rdfs:label                      "authority_file" .
 
-     :e1_internal_id_po rdf:type                        crm:E89_Propositional_object ;
-                    crm:P48_has_prefered_identifier :e1_internal_id .
+:e1_internal_id_po rdf:type                        crm:E89_Propositional_object ;
+               crm:P48_has_prefered_identifier :e1_internal_id .
 
 
-     :e1_internal_id  rdf:type                         crm:E42_Identifier ;
-                    rdfs:label                       "AFL_identifier"   ;
-                    afl:value                        10                 .
+:e1_internal_id  rdf:type                         crm:E42_Identifier ;
+                 rdfs:label                       "AFL_identifier"   ;
+                 afl:value                        10                 .
 
-     :male            rdf:type                         crm:E55_Type ;
-                    rdfs:label                       "gender"     ;
-                    afl:value                        1            .
+:male            rdf:type                         crm:E55_Type ;
+                 afl:label                        afl:gender   ;
+                 afl:value                        afl:male     .
 
-     :profession_e1   rdf:type        crm:E7_Activity ;
-                    crm:P2_has_type :architekt .
+:profession_e1   rdf:type        crm:E7_Activity ;
+                 crm:P2_has_type :architekt .
 
-     :architekt       rdf:type         crm:E55_Type           ;
-                    rdfs:label       "profession"           ;
-                    afl:value        "Architekt/Baumeister" .
+:architekt       rdf:type         crm:E55_Type           ;
+                 rdfs:label       "profession"           ;
+                 afl:value        "Architekt/Baumeister" .
 
-     :activity_e1     rdf:type         crm:E7_Activity        ;
-                    crm:P2_has_type  :painter .
+:activity_e1     rdf:type         crm:E7_Activity        ;
+                 crm:P2_has_type  :painter .
 
-     :painter         rdf:type         crm:E55_Type           ;
-                    rdfs:label       "Type of activity"     ;
-                    afl:value        "Painter"              .
+:painter         rdf:type         crm:E55_Type           ;
+                 rdfs:label       "Type of activity"     ;
+                 afl:value        "Painter"              .
 
-     :name_e1         rdf:type crm:E82_Actor_appellation ;
-                    efr:R8_consists_of :name_e1_symbol .
+:name_e1         rdf:type crm:E41_Appellation ;
+                 efr:R8_consists_of :name_e1_symbol ;
+                 crm:P139_has_alternative_form    :alt_title_e1 ;        # Alternative title
+                 crm:P139_has_alternative_form    :alt_num_e1 ;          # Alternative numeration
+                 .
+               
+:alt_title_e1    rdf:type crm:E41_Appellation ;
+                 efr:R8_consists_of :title_e1_symbol .
 
-     :alt_title_e1    rdf:type crm:E82_Actor_appellation ;
-                    crm:P139_has_alternative_form :alt_title_e1_af .
+:alt_num_e1      rdf:type crm:E41_Appellation ;
+                 efr:R8_consists_of :num_e1_symbol .
 
-     :alt_num_e1      rdf:type crm:E82_Actor_appellation ;
-                    crm:P139_has_alternative_form :alt_num_e1_af .
+:name_e1_symbol  rdf:type crm:E90_Symbolic_Object ;
+                 afl:label afl:name ;
+                 crm:P2_has_type afl:free_text ;
+                 afl:value "Théodore Eberhardt" .
 
-     :alt_title_e1_af rdf:type           crm:E82_Actor_appellation ;
-                    efr:R8_consists_of :title_e1_symbol .
+:title_e1_symbol rdf:type crm:E90_Symbolic_Object ;
+                 afl:label afl:alternativeTitle ;
+                 crm:P2_has_type afl:free_text ;
+                 afl:value "Duke" .
 
-     :alt_num_e1_af   rdf:type           crm:E82_Actor_appellation ;
-                    efr:R8_consists_of :num_e1_symbol .
+:num_e1_symbol   rdf:type        crm:E90_Symbolic_Object ;
+                 afl:label      afl:alternativeNumeration ;
+                 crm:P2_has_type afl:controlled_list ;
+                 afl:value       "I" .
 
-     :name_e1_symbol  rdf:type crm:E90_Symbolic_Object ;
-                    rdfs:label "name" ;
-                    crm:P2_has_type afl:free_text ;
-                    afl:value "Théodore Eberhardt" .
+:birth_e1        rdf:type             crm:E67_Birth ;  
+                 crm:P7_took_place_at :tongeren ;
+                 crm:P4_has_time_span :1812 .
 
-     :title_e1_symbol rdf:type crm:E90_Symbolic_Object ;
-                    rdfs:label "alternative_title" ;
-                    crm:P2_has_type afl:free_text ;
-                    afl:value "Duke" .
+:death_e1       rdf:type             crm:E69_Death ;
+                crm:P7_took_place_at :luik ;
+                crm:P4_has_time_span :1874 .     
 
-     :num_e1_symbol   rdf:type        crm:E90_Symbolic_Object ;
-                    rdfs:label      "alternative_numeration" ;
-                    crm:P2_has_type afl:controlled_list ;
-                    afl:value       "I" .
+:tongeren rdf:type crm:E53_Place ;
+          rdfs:label "place of birth" ;
+          afl:value "Tongeren"  .
+:luik     rdf:type crm:E53_Place ;
+          rdfs:label "place of death" ;
+          afl:value "Luik" .   
 
-     :birth_e1        rdf:type             crm:E67_Birth ;  
-                    crm:P7_took_place_at :tongeren ;
-                    crm:P4_has_time_span :1812 .
+:1812 rdf:type    crm:E52_Time-Span ;
+      rdfs:label  "date of birth" ;
+      afl:value "1812" .
+:1874 rdf:type    crm:E52_Time-Span ;
+      rdfs:label  "date of death" ;
+      afl:value "1874" .
 
-     :death_e1        rdf:type             crm:E69_Death ;
-                    crm:P7_took_place_at :luik ;
-                    crm:P4_has_time_span :1874 .     
+afl:free_text rdf:type crm:E55_Type ;
+     afl:value afl:directForm  .  
 
-     :tongeren rdf:type crm:E53_Place ;
-               rdfs:label "place of birth" ;
-               afl:value "Tongeren"  .
-     :luik     rdf:type crm:E53_Place ;
-               rdfs:label "place of death" ;
-               afl:value "Luik" .   
-
-     :1812 rdf:type    crm:E52_Time ;
-          rdfs:label  "date of birth" ;
-          afl:value "1812" .
-     :1874 rdf:type    crm:E52_Time ;
-          rdfs:label  "date of death" ;
-          afl:value "1874" .
-
-     afl:free_text rdf:type   crm:E55_Type ;
-               rdfs:label "type_of_name"  .  
-
-     # Some values in the rules are "Only roman numbers till XXX"
-     afl:controlled_list rdf:type   crm:E55_Type .  
-
+# Some values in the rules are "Only roman numbers till XXX"
+afl:controlled_list rdf:type   crm:E55_Type . 
