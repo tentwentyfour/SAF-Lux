@@ -18,8 +18,6 @@ WBPASS = os.environ["MW_ADMIN_PASS"]
 login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
 
-
-
 model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xlsx", header=1)
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
@@ -93,7 +91,6 @@ query = """SELECT ?prop ?propLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }"""
 
-login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe = True, endpoint=sparql).iterrows():
     print(row["prop"].replace(entityUri, ""), row["propLabel"])
     propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
@@ -111,7 +108,6 @@ item.set_label("Property", lang="en")
 item.set_aliases(["owl:ObjectProperty"], lang="en")
 item.write(login)
 
-login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
         print(row["Data type"])
@@ -121,8 +117,6 @@ for index, row in model_def.iterrows():
             print("Error with ", row["English"])
     else:
         print("Error", row["Data type"])
-
-
 
 CL4 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL4 GENDER")
 for index, row in CL4.iterrows():
@@ -157,7 +151,6 @@ for index, row in CL8.iterrows():
                       delabel=row["Label "].strip(),
                       property_datatype="external-id")
 
-
 #ARK
 createProperty(login, lulabel="ARK", 
                       enlabel="ARK",
@@ -170,14 +163,11 @@ person_item = localEntityEngine(new_item=True)
 person_item.set_label("E21 Person", lang="en")
 print(person_item.write(login))
 
-
-login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 #property
 createProperty(login, enlabel="property", 
                        property_datatype="wikibase-item")
 
 
-# In[ ]:
 
 
 
