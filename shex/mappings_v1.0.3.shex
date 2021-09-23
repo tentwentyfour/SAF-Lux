@@ -1,0 +1,102 @@
+
+PREFIX saflux: <https://lux-saf-beta.wiki.opencura.com/entity/>
+PREFIX p: <https://lux-saf-beta.wiki.opencura.com/prop/>
+PREFIX ps: <https://lux-saf-beta.wiki.opencura.com/prop/statement/>  
+PREFIX pq: <https://lux-saf-beta.wiki.opencura.com/prop/qualifier/>
+PREFIX pr: <https://lux-saf-beta.wiki.opencura.com/prop/reference/>
+PREFIX wdt: <https://lux-saf-beta.wiki.opencura.com/prop/direct/>
+PREFIX wd: <https://lux-saf-beta.wiki.opencura.com/entity/>
+PREFIX cidoc: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+saflux:person {
+  p:P8 @saflux:P8_name ; 
+  p:P17 @saflux:P17_alternative_name* ;
+  p:P19 @saflux:P19_place_of_birth ;
+  p:P18 @saflux:P18_date_of_birth ;
+  p:P21 @saflux:P21_place_of_death ;
+  p:P20 @saflux:P20_date_of_death ;
+  p:P22 @saflux:P22_gender ;
+  p:P23 @saflux:P23_profession ;
+  p:P26 @saflux:P26_activity + ;
+  p:P29 @saflux:P29_AFL_identifier ;
+  p:P36 @saflux:P36_ISNI ;
+  p:P37 @saflux:P37_VIAF ;
+  p:P41 @saflux:P41_ARK ;
+  
+}
+
+saflux:P8_name {
+  ps:P8 xsd:string ;
+  pq:P10 xsd:string ;
+  pq:P11 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference +
+}
+
+saflux:P17_alternative_name {
+  ps:P17 xsd:string ;
+  pq:P10 xsd:string ;
+  pq:P11 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference +
+}
+
+saflux:P19_place_of_birth {
+  ps:P19 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P18_date_of_birth {
+  (ps:P18 xsd:edtf,
+   ps:P18 xsd:dateTime+) ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P21_place_of_death {
+  ps:P21 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P20_date_of_death {
+  (ps:P18 xsd:edtf,
+   ps:P18 xsd:dateTime+ )
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P22_gender {
+  ps:P22 [
+                        wd:Q3 
+                        wd:Q4
+                        wd:Q5
+                        wd:Q6
+                     ]
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P23_profession {
+  ps:P23 xsd:string ; 
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P26_activity {
+  ps:P26 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P29_AFL_identifier {
+  ps:P29 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P36_ISNI {
+  ps:P36 /[0-9]4 [0-9]4 [0-9]4 [0-9]4/ ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P37_VIAF {
+  ps:P37 xsd:string ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+saflux:P41_ARK {
+  ps:P41 IRI ;
+  prov:wasDerivedFrom @saflux:reference + ;
+}
+
+saflux:reference {
+ (pr:P16 IRI) OR  
+ (pr:P12 xsd:string) OR 
+ (pr:P16 IRI ; pr:P12 xsd:string)
+}
+
