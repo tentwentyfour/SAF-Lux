@@ -1,20 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Notebook to create a new LUX-SAF Wikibase instance
-# This script builds on an excel file that is provided by the data modellers. That excel file **TODO** Provide a link to repository containing the latest version(s). 
-# That file contains the CIDOC-CRM representation of the SAF with mappings to the perceived Wikibase(Qualifier). 
-
-# In[1]:
-
-
 from wikidataintegrator import wdi_core, wdi_login, wdi_config
 from getpass import getpass
 import pandas as pd
+import os
 
 wikibase = os.environ["WIKIBASE_HOST"]
-api = wikibase+":8080/w/api.php"  ## TODO: Need to verify if the portnumber is accurate
+api = wikibase+":8080/w/api.php"
 sparql = wikibase+":9999/bigdata/namespace/wdq/sparql"
+entityUri = wikibase.replace("https:", "http:")+"entity/"
 # alternative
 ## sparql = os.environ["WDQS_HOST"]
 
@@ -24,18 +19,8 @@ login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
 
 
-# # import data
-# In[52]:
-
 
 model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xlsx", header=1)
-model_def
-
-
-# # Create properties
-
-# In[4]:
-
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
     if wdprop== None:
@@ -50,14 +35,7 @@ def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="",
     item.set_label(delabel, lang="de")
     item.set_label(frlabel, lang="fr")
     item.set_description(description, lang="en")
-    
     print(item.write(login, entity_type="property", property_datatype=property_datatype))
-
-
-# # OWL properties to capture CIDOC-CRM
-
-# In[54]:
-
 
 # instance of
 createProperty(login, lulabel="ass eng", 
