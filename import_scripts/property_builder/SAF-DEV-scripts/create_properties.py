@@ -86,11 +86,14 @@ createProperty(login, lulabel="invers vun",
                       frlabel="inverse de",
                       delabel="invers von",
                       property_datatype="wikibase-item")
+
 propertyID = dict()
 query = """SELECT ?prop ?propLabel WHERE {
   ?prop wikibase:directClaim ?wdt .
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }"""
+
+login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe = True, endpoint=sparql).iterrows():
     print(row["prop"].replace(entityUri, ""), row["propLabel"])
     propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
@@ -103,18 +106,12 @@ item.set_aliases(["Owl:Class"], lang="en")
 item.write(login)
 
 # property item
-localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
 item = localEntityEngine(new_item=True)
 item.set_label("Property", lang="en")
 item.set_aliases(["owl:ObjectProperty"], lang="en")
 item.write(login)
 
-
-# # Read the property definitions from the DM_SAF 
-
-# In[55]:
-
-
+login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
         print(row["Data type"])
@@ -126,11 +123,6 @@ for index, row in model_def.iterrows():
         print("Error", row["Data type"])
 
 
-# # Create the controlled lists as described in DM_SAF
-# ## CL4 Gender
-
-# In[56]:
-
 
 CL4 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL4 GENDER")
 for index, row in CL4.iterrows():
@@ -141,12 +133,6 @@ for index, row in CL4.iterrows():
     item.set_label(row["Label (French)"], lang="fr")
     print(item.write(login))
 
-
-# ## CL5 STATUS
-
-# In[57]:
-
-
 CL5 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL5 STATUS")
 for index, row in CL5.iterrows():
     print(row["Label (English)"])
@@ -156,23 +142,11 @@ for index, row in CL5.iterrows():
     item.set_label(row["Label (French)"], lang="fr")
     print(item.write(login))
 
-
-# # CL3 Name Format
-
-# In[58]:
-
-
 CL3 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL3 Name Format")
 for index, row in CL3.iterrows():
     item = localEntityEngine(new_item=True)
     item.set_label(row["Cataloging specs"])
     print(item.write(login))
-
-
-# # CL8 internal identifiers
-
-# In[11]:
-
 
 CL8 =  pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL8 INTERNAL IDENTIFIER")
 for index, row in CL8.iterrows():
@@ -184,11 +158,6 @@ for index, row in CL8.iterrows():
                       property_datatype="external-id")
 
 
-# # manually added external identifiers not yet covered in DMG
-
-# In[59]:
-
-
 #ARK
 createProperty(login, lulabel="ARK", 
                       enlabel="ARK",
@@ -197,17 +166,12 @@ createProperty(login, lulabel="ARK",
                       property_datatype="url")
 
 
-# In[1]:
-
-
 person_item = localEntityEngine(new_item=True)
 person_item.set_label("E21 Person", lang="en")
 print(person_item.write(login))
 
 
-# In[5]:
-
-
+login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 #property
 createProperty(login, enlabel="property", 
                        property_datatype="wikibase-item")
