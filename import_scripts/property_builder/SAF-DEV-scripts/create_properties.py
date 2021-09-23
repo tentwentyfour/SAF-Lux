@@ -18,7 +18,7 @@ WBPASS = os.environ["MW_ADMIN_PASS"]
 login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
 
-model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xlsx", header=1)
+model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", header=1)
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
     if wdprop== None:
@@ -118,7 +118,7 @@ for index, row in model_def.iterrows():
     else:
         print("Error", row["Data type"])
 
-CL4 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL4 GENDER")
+CL4 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL4 GENDER")
 for index, row in CL4.iterrows():
     print(row["Label (English)"])
     item = localEntityEngine(new_item=True)
@@ -127,7 +127,7 @@ for index, row in CL4.iterrows():
     item.set_label(row["Label (French)"], lang="fr")
     print(item.write(login))
 
-CL5 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL5 STATUS")
+CL5 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL5 STATUS")
 for index, row in CL5.iterrows():
     print(row["Label (English)"])
     item = localEntityEngine(new_item=True)
@@ -136,13 +136,13 @@ for index, row in CL5.iterrows():
     item.set_label(row["Label (French)"], lang="fr")
     print(item.write(login))
 
-CL3 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL3 Name Format")
+CL3 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL3 Name Format")
 for index, row in CL3.iterrows():
     item = localEntityEngine(new_item=True)
     item.set_label(row["Cataloging specs"])
     print(item.write(login))
 
-CL8 =  pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.2_andra.xlsx", sheet_name="CL8 INTERNAL IDENTIFIER")
+CL8 =  pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL8 INTERNAL IDENTIFIER")
 for index, row in CL8.iterrows():
     print(row["Label "])
     createProperty(login, lulabel=row["Label "].strip(), 
@@ -168,6 +168,7 @@ createProperty(login, enlabel="property",
                        property_datatype="wikibase-item")
 
 
+# In[ ]:
 
 
 
