@@ -6,13 +6,11 @@ from getpass import getpass
 import pandas as pd
 import os
 
-wikibase = os.environ["WIKIBASE_HOST"]
-api = wikibase+":8080/w/api.php"
-sparql = wikibase+":9999/bigdata/namespace/wdq/sparql"
+wbstack = os.environ["WBSTACK"]
+wikibase = "https://{}.wiki.opencura.com/".format(wbstack)
+api = "https://{}.wiki.opencura.com/w/api.php".format(wbstack)
+sparql = "https://{}.wiki.opencura.com/query/sparql".format(wbstack)
 entityUri = wikibase.replace("https:", "http:")+"entity/"
-# alternative
-## sparql = os.environ["WDQS_HOST"]
-
 WBUSER = os.environ["MW_ADMIN_NAME"]
 WBPASS = os.environ["MW_ADMIN_PASS"]
 login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
@@ -36,50 +34,50 @@ def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="",
     print(item.write(login, entity_type="property", property_datatype=property_datatype))
 
 # instance of
-createProperty(login, lulabel="ass eng", 
+createProperty(login, lulabel="ass eng",
                       enlabel="instance of",
                       frlabel="instance de",
                       delabel="ist ein(e)",
                       property_datatype="wikibase-item")
 
-# subclass of 
-## 
-createProperty(login, lulabel="Ënnerklass vu(n)", 
+# subclass of
+##
+createProperty(login, lulabel="Ënnerklass vu(n)",
                       enlabel="subclass of",
                       frlabel="sous-classe de",
                       delabel="Unterklasse von",
                       property_datatype="wikibase-item")
 # skos:exact match
-createProperty(login, lulabel="genauen Match", 
+createProperty(login, lulabel="genauen Match",
                       enlabel="exact match",
                       frlabel="correspondance exacte",
                       delabel="exakte Übereinstimmung",
                       description="mapping",
                       property_datatype="url")
-#domain 
-createProperty(login, lulabel="domain", 
+#domain
+createProperty(login, lulabel="domain",
                       enlabel="domain",
                       frlabel="domaine",
                       delabel="domain",
                       property_datatype="wikibase-item")
 #range
-createProperty(login, lulabel="reechwäit", 
+createProperty(login, lulabel="reechwäit",
                       enlabel="range",
                       frlabel="intervalle",
                       delabel="reichweite",
                       property_datatype="wikibase-item")
 
 #property
-createProperty(login, enlabel="property", 
+createProperty(login, enlabel="property",
                        property_datatype="wikibase-item")
 #subPropertyOf
-createProperty(login, lulabel="Ënnerbesëtz vun", 
+createProperty(login, lulabel="Ënnerbesëtz vun",
                       enlabel="subproperty of",
                       frlabel="sous-propriété de",
                       delabel="untereigenschaft von",
                       property_datatype="wikibase-item")
 #inverseOf
-createProperty(login, lulabel="invers vun", 
+createProperty(login, lulabel="invers vun",
                       enlabel="inverse of",
                       frlabel="inverse de",
                       delabel="invers von",
@@ -99,7 +97,7 @@ for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
         print(row["Data type"])
         try:
-            createProperty(login, enlabel=row["English"], frlabel=row["français"], delabel=row["Deutsch"], description="Lux SAF Property", property_datatype=row["Data type"].strip()) 
+            createProperty(login, enlabel=row["English"], frlabel=row["français"], delabel=row["Deutsch"], description="Lux SAF Property", property_datatype=row["Data type"].strip())
         except:
             print("Error with ", row["English"])
     else:
