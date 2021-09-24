@@ -17,7 +17,7 @@ WBUSER = os.environ["MW_ADMIN_NAME"]
 WBPASS = os.environ["MW_ADMIN_PASS"]
 login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
-print(login.user, login.token_renew_period)
+
 model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", header=1)
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
@@ -85,17 +85,27 @@ createProperty(login, lulabel="invers vun",
                       delabel="invers von",
                       property_datatype="wikibase-item")
 
-propertyID = dict()
-query = """SELECT ?prop ?propLabel WHERE {
-  ?prop wikibase:directClaim ?wdt .
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-}"""
+#propertyID = dict()
+#query = """SELECT ?prop ?propLabel WHERE {
+#  ?prop wikibase:directClaim ?wdt .
+#  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+#}"""
 
-for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe = True, endpoint=sparql).iterrows():
-    print(row["prop"].replace(entityUri, ""), row["propLabel"])
-    propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
+#for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe = True, endpoint=sparql).iterrows():
+#    print(row["prop"].replace(entityUri, ""), row["propLabel"])
+#    propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
 
-print(login.user, login.token_renew_period)
+for index, row in model_def.iterrows():
+    if row["Data type"].strip() in wdi_config.property_value_types.keys():
+        print(row["Data type"])
+        try:
+            createProperty(login, enlabel=row["English"], frlabel=row["français"], delabel=row["Deutsch"], description="Lux SAF Property", property_datatype=row["Data type"].strip()) 
+        except:
+            print("Error with ", row["English"])
+    else:
+        print("Error", row["Data type"])
+
+## Items
 # class item
 item = localEntityEngine(new_item=True)
 item.set_label("Class", lang="en")
@@ -107,16 +117,6 @@ item = localEntityEngine(new_item=True)
 item.set_label("Property", lang="en")
 item.set_aliases(["owl:ObjectProperty"], lang="en")
 print(item.write(login))
-
-for index, row in model_def.iterrows():
-    if row["Data type"].strip() in wdi_config.property_value_types.keys():
-        print(row["Data type"])
-        try:
-            createProperty(login, enlabel=row["English"], frlabel=row["français"], delabel=row["Deutsch"], description="Lux SAF Property", property_datatype=row["Data type"].strip()) 
-        except:
-            print("Error with ", row["English"])
-    else:
-        print("Error", row["Data type"])
 
 CL4 = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL4 GENDER")
 for index, row in CL4.iterrows():
