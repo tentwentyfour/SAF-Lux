@@ -17,7 +17,7 @@ WBUSER = os.environ["MW_ADMIN_NAME"]
 WBPASS = os.environ["MW_ADMIN_PASS"]
 login = wdi_login.WDLogin(WBUSER, WBPASS, mediawiki_api_url=api)
 localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
-
+print(login.user, login.token_renew_period)
 model_def = pd.read_excel("../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", header=1)
 
 def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="", delabel="", description="", property_datatype=""):
@@ -95,18 +95,18 @@ for index, row in wdi_core.WDItemEngine.execute_sparql_query(query, as_dataframe
     print(row["prop"].replace(entityUri, ""), row["propLabel"])
     propertyID[row["propLabel"]] = row["prop"].replace(entityUri, "")
 
+print(login.user, login.token_renew_period)
 # class item
-localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
 item = localEntityEngine(new_item=True)
 item.set_label("Class", lang="en")
 item.set_aliases(["Owl:Class"], lang="en")
-item.write(login)
+print(item.write(login))
 
 # property item
 item = localEntityEngine(new_item=True)
 item.set_label("Property", lang="en")
 item.set_aliases(["owl:ObjectProperty"], lang="en")
-item.write(login)
+print(item.write(login))
 
 for index, row in model_def.iterrows():
     if row["Data type"].strip() in wdi_config.property_value_types.keys():
