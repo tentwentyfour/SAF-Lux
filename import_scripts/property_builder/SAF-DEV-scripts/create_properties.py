@@ -26,7 +26,7 @@ def createProperty(login=login, wdprop=None, lulabel="", enlabel="", frlabel="",
     else:
         s = [wdi_core.WDUrl(wdprop, prop_nr="P1")]
     localEntityEngine = wdi_core.WDItemEngine.wikibase_item_engine_factory(api,sparql)
-    item = localEntityEngine(data=s)
+    item = localEntityEngine(data=s, core_props=set())
     if lulabel != "":
         item.set_label(lulabel, lang="lb")
     item.set_label(enlabel, lang="en")
@@ -107,13 +107,13 @@ for index, row in model_def.iterrows():
 
 ## Items
 # class item
-item = localEntityEngine(new_item=True)
+item = localEntityEngine(new_item=True, core_props=set())
 item.set_label("Class", lang="en")
 item.set_aliases(["Owl:Class"], lang="en")
 print(item.write(login))
 
 # property item
-item = localEntityEngine(new_item=True)
+item = localEntityEngine(new_item=True, core_props=set())
 item.set_label("Property", lang="en")
 item.set_aliases(["owl:ObjectProperty"], lang="en")
 print(item.write(login))
@@ -121,7 +121,7 @@ print(item.write(login))
 CL4 = pd.read_excel("../../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL4 GENDER")
 for index, row in CL4.iterrows():
     print(row["Label (English)"])
-    item = localEntityEngine(new_item=True)
+    item = localEntityEngine(new_item=True, core_props=set())
     item.set_label(row["Label (English)"], lang="en")
     item.set_label(row["Label (German)"], lang="de")
     item.set_label(row["Label (French)"], lang="fr")
@@ -130,7 +130,7 @@ for index, row in CL4.iterrows():
 CL5 = pd.read_excel("../../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL5 STATUS")
 for index, row in CL5.iterrows():
     print(row["Label (English)"])
-    item = localEntityEngine(new_item=True)
+    item = localEntityEngine(new_item=True, core_props=set())
     item.set_label(row["Label (English)"], lang="en")
     item.set_label(row["Label (German)"], lang="de")
     item.set_label(row["Label (French)"], lang="fr")
@@ -138,7 +138,7 @@ for index, row in CL5.iterrows():
 
 CL3 = pd.read_excel("../../DM_SAF/DM_SAF_vers.1.0.3_andra.xls", sheet_name="CL3 Name Format")
 for index, row in CL3.iterrows():
-    item = localEntityEngine(new_item=True)
+    item = localEntityEngine(new_item=True, core_props=set())
     item.set_label(row["Cataloging specs"])
     print(item.write(login))
 
@@ -159,7 +159,7 @@ createProperty(login, lulabel="ARK",
                       property_datatype="url")
 
 
-person_item = localEntityEngine(new_item=True)
+person_item = localEntityEngine(new_item=True, core_props=set())
 person_item.set_label("E21 Person", lang="en")
 print(person_item.write(login))
 
