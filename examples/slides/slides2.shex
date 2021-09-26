@@ -1,0 +1,30 @@
+prefix :       <http://data.culture.lu/>
+prefix saflux: <http://data.culture.lu/ns/saf/>
+prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>
+prefix edtf: <http://id.loc.gov/datatypes/edtf/>
+prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+saflux:Person { 
+    rdf:type         [ crm:E21_Person ] ;
+    rdfs:label       xsd:string ;     
+    crm:P2_has_type  [ saflux:male saflux:female ] ;
+    crm:P98_was_born @saflux:BirthInformation 
+}
+
+saflux:BirthInformation {
+ rdf:type                  [ crm:E67_Birth ] ;
+ crm:P4_has_time_span      @saflux:TimeSpan ? ;
+ crm:P7_took_place_at      @saflux:Place ? ;
+}
+
+saflux:TimeSpan {
+  rdf:type     [ crm:E52_Time-Span ] ;
+  saflux:value edtf:EDTF 
+}
+
+saflux:Place {
+  rdf:type     [ crm:E53_Place ] ;
+  saflux:value xsd:string
+}

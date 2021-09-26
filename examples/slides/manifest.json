@@ -1,0 +1,11 @@
+[
+  {
+    "title": "slides1",
+    "desc": "Simple example CIDOC-CRM shex",
+    "schemaURL": "slides1.shex",
+    "schemaFormat": "ShExC",
+    "dataURL": "slides1.ttl",
+    "node": "http://data.culture.lu/e1",
+    "shape": "http://data.culture.lu/ns/saf/Person"
+  }
+]

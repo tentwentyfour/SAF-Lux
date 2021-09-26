@@ -1,0 +1,22 @@
+prefix :       <http://data.culture.lu/>
+prefix saflux: <http://data.culture.lu/ns/saf/>
+prefix edtf: <http://id.loc.gov/datatypes/edtf/>
+prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>
+prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+:e1 rdf:type        crm:E21_Person ;
+    rdfs:label      "Philip IV" ;     
+    crm:P2_has_type saflux:male ;
+    crm:P98_was_born        :b1 .
+
+:b1 a crm:E67_Birth ;
+ crm:P4_has_time_span      :b1time ;
+ crm:P7_took_place_at      :b1place ;
+ crm:P70i_is_documented_in :wikipedia .
+
+:b1time  a crm:E52_Time-Span ;
+  saflux:value "1542-10-14"^^edtf:EDTF .
+:b1place a crm:E53_Place ;
+  saflux:value "Weilburg".
+

@@ -136,7 +136,7 @@ afl:Name {
 afl:Numeration {
   rdf:type   [ crm:E90_Symbolic_Object ];
   afl:label  @afl:numerationLabel ;
-  afl:value .  # roman numbers
+  afl:value  .  # roman numbers
 }
 
 afl:Title {
