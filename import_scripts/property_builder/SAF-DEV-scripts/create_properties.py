@@ -5,6 +5,7 @@ from wikidataintegrator import wdi_core, wdi_login, wdi_config
 from getpass import getpass
 import pandas as pd
 import os
+import sys
 
 wikibase = os.environ["WIKIBASE_HOST"]
 api = wikibase+":8080/w/api.php"
@@ -101,9 +102,9 @@ for index, row in model_def.iterrows():
         try:
             createProperty(login, enlabel=row["English"], frlabel=row["français"], delabel=row["Deutsch"], description="Lux SAF Property", property_datatype=row["Data type"].strip()) 
         except:
-            print("Error with ", row["English"])
+            print("Unexpected error:", sys.exc_info()[0])
     else:
-        print("Error", row["Data type"])
+        print("unsupported data type", row["Data type"])
 
 ## Items
 # class item
