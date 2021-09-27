@@ -1,0 +1,47 @@
+PREFIX wd:     <http://lux-saf-beta.wiki.opencura.com/entity/>
+PREFIX wdt:    <http://lux-saf-beta.wiki.opencura.com/prop/direct/>
+prefix p:      <http://lux-saf-beta.wiki.opencura.com/prop/>
+prefix ps:     <http://lux-saf-beta.wiki.opencura.com/prop/statement/>
+prefix pq:     <http://lux-saf-beta.wiki.opencura.com/prop/qualifier/>
+prefix pr:     <http://lux-saf-beta.wiki.opencura.com/prop/reference/>
+prefix prov:   <http://www.w3.org/ns/prov#>
+prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>
+prefix efr:    <http://iflastandards.info/ns/fr/frbr/frbroo/>
+prefix saflux: <http://data.culture.lu/ns/saf/>
+
+construct {
+ wd:Q351 rdf:type crm:E21_Person ;
+  crm:P1_is_identified_by [ 
+    rdf:type crm:E41_Appellation ;
+    efr:R8_consists_of [ 
+       rdf:type crm:E90_Symbolic_Object ;
+       saflux:label saflux:name ;
+       saflux:value ?name ;
+       crm:P2_has_type [ 
+           a crm:E55_Type ;
+           saflux:value saflux:directForm 
+       ]
+   ] ;
+   crm:P70i_is_documented_in [
+    a crm:E31_Document  ;
+    saflux:label saflux:sourceOfInformation    ;
+    saflux:value ?sourceOfInformationNameURL 
+   ]
+  ] ;
+  crm:P98_was_born [ 
+     rdf:type crm:E67_Birth ;
+     crm:P7_took_place_at [ 
+       rdf:type crm:E53_Place ;
+       saflux:value ?birthPlace
+   ]
+ ] 
+} where {
+  wd:Q351 
+   p:P8 [
+    ps:P8 ?name ; 
+    prov:wasDerivedFrom [
+    pr:P16 ?sourceOfInformationNameUrl 
+  ]] ;
+  wdt:P19 ?birthPlace .
+}
