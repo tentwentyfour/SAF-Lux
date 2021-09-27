@@ -1,9 +1,10 @@
 prefix :       <http://data.culture.lu/>
-prefix saflux: <http://data.culture.lu/ns/saf/>
-prefix edtf:   <http://id.loc.gov/datatypes/edtf/>
 prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>
+prefix edtf:   <http://id.loc.gov/datatypes/edtf/>
+prefix efr:    <http://iflastandards.info/ns/fr/frbr/frbroo/>
 prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix saflux: <http://data.culture.lu/ns/saf/>
 
 :e1 rdf:type                crm:E21_Person ;
     crm:P1_is_identified_by :a1 .
@@ -14,17 +15,17 @@ prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   crm:P139_has_alternative_form :a2, :a3 .
 
 :name1 a crm:E90_Symbolic_Object ;
-   afl:label afl:name ;
-   crm:P2_has_type afl:direct ;
-   afl:value "Philip" .
+   saflux:label saflux:name ;
+   crm:P2_has_type saflux:direct ;
+   saflux:value "Philip" .
 
 :numeration1 a crm:E90_Symbolic_Object ;
-   afl:label afl:numeration ;
-   afl:value "IV" .
+   saflux:label saflux:numeration ;
+   saflux:value "IV" .
 
 :title1 a crm:E90_Symbolic_Object ;
-    afl:label afl:title ;
-    afl:value "Nassau-Weilburg" .
+    saflux:label saflux:title ;
+    saflux:value "Nassau-Weilburg" .
 
 :a2 a crm:E41_Appellation ;
  efr:R8_consists_of :name2, :numeration2, :title2 ;
@@ -35,24 +36,24 @@ prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
  crm:P70i_is_documented_in :dnb .
 
 :name2 a crm:E90_Symbolic_Object ;
-  afl:label afl:alternativeName  ;
-  crm:P2_has_type afl:direct     ;
-  afl:value "Philip"             .
+  saflux:label saflux:alternativeName  ;
+  crm:P2_has_type saflux:direct     ;
+  saflux:value "Philip"             .
 
 :numeration2 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeNumeration   ;
- afl:value "III"                       .
+ saflux:label saflux:alternativeNumeration   ;
+ saflux:value "III"                       .
 
 :title2 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeTitle ;
- afl:value "Nassau-Saarbrücken" .
+ saflux:label saflux:alternativeTitle ;
+ saflux:value "Nassau-Saarbrücken" .
 
 :name3 a crm:E90_Symbolic_Object ;
-  afl:label afl:alternativeName  ;
-  crm:P2_has_type afl:direct ;
-  afl:value "Phillip" .
+  saflux:label saflux:alternativeName  ;
+  crm:P2_has_type saflux:direct ;
+  saflux:value "Phillip" .
 
 :numeration3 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeNumeration ;
- afl:value "IV" .
+ saflux:label saflux:alternativeNumeration ;
+ saflux:value "IV" .
 

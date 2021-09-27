@@ -2,35 +2,92 @@ prefix :       <http://data.culture.lu/>
 prefix saflux: <http://data.culture.lu/ns/saf/>
 prefix edtf:   <http://id.loc.gov/datatypes/edtf/>
 prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>
+prefix efr:    <http://iflastandards.info/ns/fr/frbr/frbroo/>
 prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd:    <http://www.w3.org/2001/XMLSchema#>
 
-afl:Person {
-  rdf:type                [ crm:E21_Person ]   ;
-  crm:P1_is_identified_by @afl:NameAppellation ;
+saflux:Person {
+  rdf:type                        [ crm:E21_Person ]                ;
+  crm:P1_is_identified_by         @saflux:NameAppellation              ;
   # ...
 }
 
-afl:NameAppellation {
- rdf:type [ crm:E41_Appellation ] ;
- efr:R8_consists_of @afl:Name ;
- efr:R8_consists_of @afl:Numeration ? ;
- efr:R8_consists_of @afl:Title ? ;
- crm:P70i_is_documented_in @afl:SourceOfInformation * ;
- crm:P139_has_alternative_form @afl:AltNameAppellation * ;
+saflux:NameAppellation {
+    rdf:type                       [ crm:E41_Appellation ]           ;
+    efr:R8_consists_of             @saflux:Name                         ;
+    efr:R8_consists_of             @saflux:Numeration                 ? ;
+    efr:R8_consists_of             @saflux:Title                      ? ;
+    crm:P139_has_alternative_form  @saflux:AlternativeNameAppellation * ;
 }
 
-afl:AltNameAppellation {
-  rdf:type                  [ crm:E41_Appellation ] ;
-  efr:R8_consists_of        @afl:AlternativeName ? ;
-  efr:R8_consists_of        @afl:AlternativeNumeration ? ;
-  efr:R8_consists_of        @afl:AlternativeTitle ? ;
-  crm:P70i_is_documented_in @afl:SourceOfInformation * ;
+saflux:AlternativeNameAppellation {
+  rdf:type                  [ crm:E41_Appellation ]           ;
+  efr:R8_consists_of        @saflux:AlternativeName            ? ;
+  efr:R8_consists_of        @saflux:AlternativeNumeration      ? ;
+  efr:R8_consists_of        @saflux:AlternativeTitle           ? ;
 }
 
-afl:Name {
+saflux:Name {
   rdf:type        [ crm:E90_Symbolic_Object ];
-  afl:label       @afl:nameLabel ;
-  crm:P2_has_type @afl:NameType ;
-  afl:value       xsd:string
+  saflux:label    @saflux:nameLabel ;
+  saflux:value    xsd:string
+}
+
+saflux:Numeration {
+  rdf:type   [ crm:E90_Symbolic_Object ];
+  saflux:label  @saflux:numerationLabel ;
+  saflux:value  . 
+}
+
+saflux:Title {
+  rdf:type   [ crm:E90_Symbolic_Object ];
+  saflux:label  @saflux:titleLabel ;
+  saflux:value  xsd:string  # free text, Filiation or associated titles
+}
+
+saflux:AlternativeName {
+  rdf:type        [ crm:E90_Symbolic_Object ];
+  saflux:label    @saflux:alternativeNameLabel ;
+  saflux:value    . ;
+}
+
+saflux:AlternativeNumeration {
+  rdf:type   [ crm:E90_Symbolic_Object ]    ;
+  saflux:label  @saflux:alternativeNumerationLabel ;
+  saflux:value  . 
+}
+
+saflux:AlternativeTitle {
+  rdf:type   [ crm:E90_Symbolic_Object ] ;
+  saflux:label  @saflux:alternativeTitleLabel ;
+  saflux:value  xsd:string
+}
+
+saflux:nameLabel [ saflux:name ] AND {
+ rdfs:label [ "Name"@de "name"@en "nom"@fr ] *
+}
+
+saflux:nameFormatLabel [ saflux:nameFormat ] AND {
+  rdfs:label [ "Namensformat"@de "name format"@en "format du nom"@fr ] *
+}
+
+saflux:numerationLabel [ saflux:numeration ] AND {
+  rdfs:label [ "Numerierung"@de "numeration"@en "numérotation"@fr ] *
+}
+
+saflux:titleLabel [ saflux:title ] AND {
+  rdfs:label [ "Titel"@de 	"title"@en 	"titre"@fr  ] *
+}
+
+saflux:alternativeNameLabel [ saflux:alternativeName ] AND {
+  rdfs:label [ "Alternativname"@de "alternative name"@en "nom alternatif"@fr ] *
+}
+
+saflux:alternativeNumerationLabel [ saflux:alternativeNumeration ] AND {
+  rdfs:label [ "Numerierung"@de "numeration"@en "numérotation"@fr ] *
+}
+
+saflux:alternativeTitleLabel [ saflux:alternativeTitle ] AND {
+  rdfs:label [ "Titel"@de 	"title"@en 	"titre"@fr ] *
 }
