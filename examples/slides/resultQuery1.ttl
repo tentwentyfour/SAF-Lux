@@ -1,0 +1,74 @@
+@prefix wd: <http://lux-saf-beta.wiki.opencura.com/entity/> .
+@prefix wdt: <http://lux-saf-beta.wiki.opencura.com/prop/direct/> .
+@prefix p: <http://lux-saf-beta.wiki.opencura.com/prop/> .
+@prefix ps: <http://lux-saf-beta.wiki.opencura.com/prop/statement/> .
+@prefix pq: <http://lux-saf-beta.wiki.opencura.com/prop/qualifier/> .
+@prefix pr: <http://lux-saf-beta.wiki.opencura.com/prop/reference/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix efr: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix saflux: <http://data.culture.lu/ns/saf/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix bd: <http://www.bigdata.com/rdf#> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix wdata: <http://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/geosparql/function/> .
+@prefix mediawiki: <https://www.mediawiki.org/ontology#> .
+@prefix mwapi: <https://www.mediawiki.org/ontology#API/> .
+@prefix gas: <http://www.bigdata.com/rdf/gas#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+wd:Q351 a crm:E21_Person .
+
+_:b0 a crm:E41_Appellation .
+
+_:b1 a crm:E90_Symbolic_Object ;
+	saflux:label saflux:name ;
+	saflux:value "Zenner, Theodor" .
+
+_:b2 a crm:E55_Type ;
+	saflux:value saflux:directForm .
+
+_:b1 crm:P2_has_type _:b2 .
+
+_:b0 efr:R8_consists_of _:b1 .
+
+_:b3 a crm:E31_Document ;
+	saflux:label saflux:sourceOfInformation .
+
+_:b0 crm:P70i_is_documented_in _:b3 .
+
+wd:Q351 crm:P1_is_identified_by _:b0 .
+
+_:b4 a crm:E67_Birth .
+
+_:b5 a crm:E53_Place ;
+	saflux:value "Gilsdorf" .
+
+_:b4 crm:P7_took_place_at _:b5 .
+
+wd:Q351 crm:P98_was_born _:b4 .

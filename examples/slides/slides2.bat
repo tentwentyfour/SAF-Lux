@@ -1,0 +1,1 @@
+shex validate --shapes slides2.shex --map slides2.shapeMap --data slides2.ttl

@@ -1,0 +1,1 @@
+curl -H "Accept:text/turtle" --data-urlencode "query@query1.sparql" https://lux-saf-beta.wiki.opencura.com/query/sparql > resultQuery1.ttl
