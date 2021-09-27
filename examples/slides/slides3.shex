@@ -5,57 +5,32 @@ prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>
 prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-:e1 rdf:type                crm:E21_Person ;
-    crm:P1_is_identified_by :a1 .
+afl:Person {
+  rdf:type                [ crm:E21_Person ]   ;
+  crm:P1_is_identified_by @afl:NameAppellation ;
+  # ...
+}
 
-:a1 a crm:E41_Appellation ;
-  efr:R8_consists_of [
-    crm:E90_Symbolic_Object ;
-   afl:label afl:name ;
-   crm:P2_has_type afl:direct ;
-   afl:value "Philip"
-  ], [
-   rdf:type crm:E90_Symbolic_Object ;
-   afl:label afl:numeration ;
-   afl:value "IV"
-  ] , :title1 ;
-  crm:P70i_is_documented_in :wikipedia ;
-  crm:P139_has_alternative_form :a2, :a3 .
+afl:NameAppellation {
+ rdf:type [ crm:E41_Appellation ] ;
+ efr:R8_consists_of @afl:Name ;
+ efr:R8_consists_of @afl:Numeration ? ;
+ efr:R8_consists_of @afl:Title ? ;
+ crm:P70i_is_documented_in @afl:SourceOfInformation * ;
+ crm:P139_has_alternative_form @afl:AltNameAppellation * ;
+}
 
+afl:AltNameAppellation {
+  rdf:type                  [ crm:E41_Appellation ] ;
+  efr:R8_consists_of        @afl:AlternativeName ? ;
+  efr:R8_consists_of        @afl:AlternativeNumeration ? ;
+  efr:R8_consists_of        @afl:AlternativeTitle ? ;
+  crm:P70i_is_documented_in @afl:SourceOfInformation * ;
+}
 
-
- .
-
-:title1 a crm:E90_Symbolic_Object ;
-    afl:label afl:title ;
-    afl:value "Nassau-Weilburg" .
-
-:a2 a crm:E41_Appellation ;
- efr:R8_consists_of :name2, :numeration2, :title2 ;
- crm:P70i_is_documented_in :wikipedia .
-
-:a3 a crm:E41_Appellation ;
- efr:R8_consists_of :name3, :numeration3 ;
- crm:P70i_is_documented_in :dnb .
-
-:name2 a crm:E90_Symbolic_Object ;
-  afl:label afl:alternativeName  ;
-  crm:P2_has_type afl:direct     ;
-  afl:value "Philip"             .
-
-:numeration2 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeNumeration   ;
- afl:value "III"                       .
-
-:title2 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeTitle ;
- afl:value "Nassau-Saarbrücken" .
-
-:name3 a crm:E90_Symbolic_Object ;
-  afl:label afl:alternativeName  ;
-  crm:P2_has_type afl:direct ;
-  afl:value "Phillip" .
-
-:numeration3 a crm:E90_Symbolic_Object ;
- afl:label afl:alternativeNumeration ;
- afl:value "IV" .
+afl:Name {
+  rdf:type        [ crm:E90_Symbolic_Object ];
+  afl:label       @afl:nameLabel ;
+  crm:P2_has_type @afl:NameType ;
+  afl:value       xsd:string
+}
