@@ -3,7 +3,7 @@
     "schemaLabel": "slides1",
     "schema": "prefix :       <http://data.culture.lu/>\nprefix saflux: <http://data.culture.lu/ns/saf/>\nprefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>\nprefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>\nprefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nprefix xsd:  <http://www.w3.org/2001/XMLSchema#>\n    saflux:Person { \n        rdf:type         [ crm:E21_Person ] ;\n        rdfs:label       xsd:string ;\n        crm:P2_has_type  [ saflux:male saflux:female ]\n    }\n",
     "dataLabel": "simple example",
-    "data": "prefix :       <http://data.culture.lu/>\n    prefix saflux: <http://data.culture.lu/ns/saf/>\n    prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>\n    prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>\n    prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n    prefix xsd:  <http://www.w3.org/2001/XMLSchema#>\n    \n    :e1 rdf:type        crm:E21_Person ;\n        rdfs:label      "Philip IV" ;     \n        crm:P2_has_type saflux:male .\n    ",
+    "data": "prefix :       <http://data.culture.lu/>\n    prefix saflux: <http://data.culture.lu/ns/saf/>\n    prefix crm:    <http://www.cidoc-crm.org/cidoc-crm/>\n    prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>\n    prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n    prefix xsd:  <http://www.w3.org/2001/XMLSchema#>\n    \n    :e1 rdf:type        crm:E21_Person ;\n        rdfs:label      \"Philip IV\" ;     \n        crm:P2_has_type saflux:male .\n    ",
     "queryMap": "<http://data.culture.lu/e1>@<http://data.culture.lu/ns/saf/Person>",
     "status": "conformant"
   }
