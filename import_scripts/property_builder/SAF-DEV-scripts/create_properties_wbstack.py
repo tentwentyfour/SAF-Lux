@@ -6,10 +6,11 @@ from getpass import getpass
 import pandas as pd
 import os
 
-wbstack = os.environ["WBSTACK"]
-wikibase = "https://{}.wiki.opencura.com/".format(wbstack)
-api = "https://{}.wiki.opencura.com/w/api.php".format(wbstack)
-sparql = "https://{}.wiki.opencura.com/query/sparql".format(wbstack)
+#wbstack = os.environ["WBSTACK"]
+wikibase = "https://luxsaf-demo.micel.io/"
+#wikibase = "https://{}.wiki.opencura.com/".format(wbstack)
+api = "https://luxsaf-demo.micel.io/w/api.php"
+sparql = "https://luxsaf-demo.micel.io/query/sparql"
 entityUri = wikibase.replace("https:", "http:")+"entity/"
 WBUSER = os.environ["MW_ADMIN_NAME"]
 WBPASS = os.environ["MW_ADMIN_PASS"]
